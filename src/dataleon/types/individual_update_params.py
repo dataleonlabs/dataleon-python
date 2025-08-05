@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from typing_extensions import Literal, Required, TypedDict
 
-__all__ = ["IndividualCreateParams", "Person", "TechnicalData"]
+__all__ = ["IndividualUpdateParams", "Person", "TechnicalData"]
 
 
-class IndividualCreateParams(TypedDict, total=False):
+class IndividualUpdateParams(TypedDict, total=False):
     workspace_id: Required[str]
     """Unique identifier of the workspace where the individual is being registered."""
 

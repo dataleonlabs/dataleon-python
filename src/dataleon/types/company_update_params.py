@@ -4,10 +4,10 @@ from __future__ import annotations
 
 from typing_extensions import Required, TypedDict
 
-__all__ = ["CompanyCreateParams", "Company", "TechnicalData"]
+__all__ = ["CompanyUpdateParams", "Company", "TechnicalData"]
 
 
-class CompanyCreateParams(TypedDict, total=False):
+class CompanyUpdateParams(TypedDict, total=False):
     company: Required[Company]
     """Main information about the company being registered."""
 
