@@ -8,23 +8,10 @@ from typing_extensions import Literal
 
 import httpx
 
-from ...types import (
-    individual_list_params,
-    individual_create_params,
-    individual_update_params,
-    individual_retrieve_params,
-)
-from ..._types import NOT_GIVEN, Body, Query, Headers, NoneType, NotGiven
+from ...types import individual_list_params, individual_create_params
+from ..._types import NOT_GIVEN, Body, Query, Headers, NotGiven
 from ..._utils import maybe_transform, async_maybe_transform
 from ..._compat import cached_property
-from .documents import (
-    DocumentsResource,
-    AsyncDocumentsResource,
-    DocumentsResourceWithRawResponse,
-    AsyncDocumentsResourceWithRawResponse,
-    DocumentsResourceWithStreamingResponse,
-    AsyncDocumentsResourceWithStreamingResponse,
-)
 from ..._resource import SyncAPIResource, AsyncAPIResource
 from ..._response import (
     to_raw_response_wrapper,
@@ -40,10 +27,6 @@ __all__ = ["IndividualsResource", "AsyncIndividualsResource"]
 
 
 class IndividualsResource(SyncAPIResource):
-    @cached_property
-    def documents(self) -> DocumentsResource:
-        return DocumentsResource(self._client)
-
     @cached_property
     def with_raw_response(self) -> IndividualsResourceWithRawResponse:
         """
@@ -108,110 +91,6 @@ class IndividualsResource(SyncAPIResource):
                     "technical_data": technical_data,
                 },
                 individual_create_params.IndividualCreateParams,
-            ),
-            options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
-            ),
-            cast_to=Individual,
-        )
-
-    def retrieve(
-        self,
-        id: str,
-        *,
-        document: bool | NotGiven = NOT_GIVEN,
-        scope: str | NotGiven = NOT_GIVEN,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> Individual:
-        """
-        Get an individual by ID
-
-        Args:
-          document: Include document information
-
-          scope: Scope filter (id or scope)
-
-          extra_headers: Send extra headers
-
-          extra_query: Add additional query parameters to the request
-
-          extra_body: Add additional JSON properties to the request
-
-          timeout: Override the client-level default timeout for this request, in seconds
-        """
-        if not id:
-            raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
-        return self._get(
-            f"/individuals/{id}",
-            options=make_request_options(
-                extra_headers=extra_headers,
-                extra_query=extra_query,
-                extra_body=extra_body,
-                timeout=timeout,
-                query=maybe_transform(
-                    {
-                        "document": document,
-                        "scope": scope,
-                    },
-                    individual_retrieve_params.IndividualRetrieveParams,
-                ),
-            ),
-            cast_to=Individual,
-        )
-
-    def update(
-        self,
-        id: str,
-        *,
-        workspace_id: str,
-        person: individual_update_params.Person | NotGiven = NOT_GIVEN,
-        source_id: str | NotGiven = NOT_GIVEN,
-        technical_data: individual_update_params.TechnicalData | NotGiven = NOT_GIVEN,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> Individual:
-        """
-        Update an individual by ID
-
-        Args:
-          workspace_id: Unique identifier of the workspace where the individual is being registered.
-
-          person: Personal information about the individual.
-
-          source_id: Optional identifier for tracking the source system or integration from your
-              system.
-
-          technical_data: Technical metadata related to the request or processing.
-
-          extra_headers: Send extra headers
-
-          extra_query: Add additional query parameters to the request
-
-          extra_body: Add additional JSON properties to the request
-
-          timeout: Override the client-level default timeout for this request, in seconds
-        """
-        if not id:
-            raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
-        return self._put(
-            f"/individuals/{id}",
-            body=maybe_transform(
-                {
-                    "workspace_id": workspace_id,
-                    "person": person,
-                    "source_id": source_id,
-                    "technical_data": technical_data,
-                },
-                individual_update_params.IndividualUpdateParams,
             ),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
@@ -290,46 +169,8 @@ class IndividualsResource(SyncAPIResource):
             cast_to=IndividualListResponse,
         )
 
-    def delete(
-        self,
-        id: str,
-        *,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> None:
-        """
-        Delete an individual by ID
-
-        Args:
-          extra_headers: Send extra headers
-
-          extra_query: Add additional query parameters to the request
-
-          extra_body: Add additional JSON properties to the request
-
-          timeout: Override the client-level default timeout for this request, in seconds
-        """
-        if not id:
-            raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
-        extra_headers = {"Accept": "*/*", **(extra_headers or {})}
-        return self._delete(
-            f"/individuals/{id}",
-            options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
-            ),
-            cast_to=NoneType,
-        )
-
 
 class AsyncIndividualsResource(AsyncAPIResource):
-    @cached_property
-    def documents(self) -> AsyncDocumentsResource:
-        return AsyncDocumentsResource(self._client)
-
     @cached_property
     def with_raw_response(self) -> AsyncIndividualsResourceWithRawResponse:
         """
@@ -394,110 +235,6 @@ class AsyncIndividualsResource(AsyncAPIResource):
                     "technical_data": technical_data,
                 },
                 individual_create_params.IndividualCreateParams,
-            ),
-            options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
-            ),
-            cast_to=Individual,
-        )
-
-    async def retrieve(
-        self,
-        id: str,
-        *,
-        document: bool | NotGiven = NOT_GIVEN,
-        scope: str | NotGiven = NOT_GIVEN,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> Individual:
-        """
-        Get an individual by ID
-
-        Args:
-          document: Include document information
-
-          scope: Scope filter (id or scope)
-
-          extra_headers: Send extra headers
-
-          extra_query: Add additional query parameters to the request
-
-          extra_body: Add additional JSON properties to the request
-
-          timeout: Override the client-level default timeout for this request, in seconds
-        """
-        if not id:
-            raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
-        return await self._get(
-            f"/individuals/{id}",
-            options=make_request_options(
-                extra_headers=extra_headers,
-                extra_query=extra_query,
-                extra_body=extra_body,
-                timeout=timeout,
-                query=await async_maybe_transform(
-                    {
-                        "document": document,
-                        "scope": scope,
-                    },
-                    individual_retrieve_params.IndividualRetrieveParams,
-                ),
-            ),
-            cast_to=Individual,
-        )
-
-    async def update(
-        self,
-        id: str,
-        *,
-        workspace_id: str,
-        person: individual_update_params.Person | NotGiven = NOT_GIVEN,
-        source_id: str | NotGiven = NOT_GIVEN,
-        technical_data: individual_update_params.TechnicalData | NotGiven = NOT_GIVEN,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> Individual:
-        """
-        Update an individual by ID
-
-        Args:
-          workspace_id: Unique identifier of the workspace where the individual is being registered.
-
-          person: Personal information about the individual.
-
-          source_id: Optional identifier for tracking the source system or integration from your
-              system.
-
-          technical_data: Technical metadata related to the request or processing.
-
-          extra_headers: Send extra headers
-
-          extra_query: Add additional query parameters to the request
-
-          extra_body: Add additional JSON properties to the request
-
-          timeout: Override the client-level default timeout for this request, in seconds
-        """
-        if not id:
-            raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
-        return await self._put(
-            f"/individuals/{id}",
-            body=await async_maybe_transform(
-                {
-                    "workspace_id": workspace_id,
-                    "person": person,
-                    "source_id": source_id,
-                    "technical_data": technical_data,
-                },
-                individual_update_params.IndividualUpdateParams,
             ),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
@@ -576,40 +313,6 @@ class AsyncIndividualsResource(AsyncAPIResource):
             cast_to=IndividualListResponse,
         )
 
-    async def delete(
-        self,
-        id: str,
-        *,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> None:
-        """
-        Delete an individual by ID
-
-        Args:
-          extra_headers: Send extra headers
-
-          extra_query: Add additional query parameters to the request
-
-          extra_body: Add additional JSON properties to the request
-
-          timeout: Override the client-level default timeout for this request, in seconds
-        """
-        if not id:
-            raise ValueError(f"Expected a non-empty value for `id` but received {id!r}")
-        extra_headers = {"Accept": "*/*", **(extra_headers or {})}
-        return await self._delete(
-            f"/individuals/{id}",
-            options=make_request_options(
-                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
-            ),
-            cast_to=NoneType,
-        )
-
 
 class IndividualsResourceWithRawResponse:
     def __init__(self, individuals: IndividualsResource) -> None:
@@ -618,22 +321,9 @@ class IndividualsResourceWithRawResponse:
         self.create = to_raw_response_wrapper(
             individuals.create,
         )
-        self.retrieve = to_raw_response_wrapper(
-            individuals.retrieve,
-        )
-        self.update = to_raw_response_wrapper(
-            individuals.update,
-        )
         self.list = to_raw_response_wrapper(
             individuals.list,
         )
-        self.delete = to_raw_response_wrapper(
-            individuals.delete,
-        )
-
-    @cached_property
-    def documents(self) -> DocumentsResourceWithRawResponse:
-        return DocumentsResourceWithRawResponse(self._individuals.documents)
 
 
 class AsyncIndividualsResourceWithRawResponse:
@@ -643,22 +333,9 @@ class AsyncIndividualsResourceWithRawResponse:
         self.create = async_to_raw_response_wrapper(
             individuals.create,
         )
-        self.retrieve = async_to_raw_response_wrapper(
-            individuals.retrieve,
-        )
-        self.update = async_to_raw_response_wrapper(
-            individuals.update,
-        )
         self.list = async_to_raw_response_wrapper(
             individuals.list,
         )
-        self.delete = async_to_raw_response_wrapper(
-            individuals.delete,
-        )
-
-    @cached_property
-    def documents(self) -> AsyncDocumentsResourceWithRawResponse:
-        return AsyncDocumentsResourceWithRawResponse(self._individuals.documents)
 
 
 class IndividualsResourceWithStreamingResponse:
@@ -668,22 +345,9 @@ class IndividualsResourceWithStreamingResponse:
         self.create = to_streamed_response_wrapper(
             individuals.create,
         )
-        self.retrieve = to_streamed_response_wrapper(
-            individuals.retrieve,
-        )
-        self.update = to_streamed_response_wrapper(
-            individuals.update,
-        )
         self.list = to_streamed_response_wrapper(
             individuals.list,
         )
-        self.delete = to_streamed_response_wrapper(
-            individuals.delete,
-        )
-
-    @cached_property
-    def documents(self) -> DocumentsResourceWithStreamingResponse:
-        return DocumentsResourceWithStreamingResponse(self._individuals.documents)
 
 
 class AsyncIndividualsResourceWithStreamingResponse:
@@ -693,19 +357,6 @@ class AsyncIndividualsResourceWithStreamingResponse:
         self.create = async_to_streamed_response_wrapper(
             individuals.create,
         )
-        self.retrieve = async_to_streamed_response_wrapper(
-            individuals.retrieve,
-        )
-        self.update = async_to_streamed_response_wrapper(
-            individuals.update,
-        )
         self.list = async_to_streamed_response_wrapper(
             individuals.list,
         )
-        self.delete = async_to_streamed_response_wrapper(
-            individuals.delete,
-        )
-
-    @cached_property
-    def documents(self) -> AsyncDocumentsResourceWithStreamingResponse:
-        return AsyncDocumentsResourceWithStreamingResponse(self._individuals.documents)
