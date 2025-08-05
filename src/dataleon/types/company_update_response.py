@@ -2,7 +2,7 @@
 
 from typing import List, Optional
 from datetime import date, datetime
-from typing_extensions import Literal, TypeAlias
+from typing_extensions import Literal
 
 from .risk import Risk
 from .check import Check
@@ -13,16 +13,10 @@ from .aml_suspicion import AmlSuspicion
 from .technical_data import TechnicalData
 from .individuals.generic_document import GenericDocument
 
-__all__ = [
-    "CompanyListResponse",
-    "CompanyListResponseItem",
-    "CompanyListResponseItemCompany",
-    "CompanyListResponseItemCompanyContact",
-    "CompanyListResponseItemMember",
-]
+__all__ = ["CompanyUpdateResponse", "Company", "CompanyContact", "Member"]
 
 
-class CompanyListResponseItemCompanyContact(BaseModel):
+class CompanyContact(BaseModel):
     department: Optional[str] = None
     """Department of the contact person."""
 
@@ -39,14 +33,14 @@ class CompanyListResponseItemCompanyContact(BaseModel):
     """Phone number of the contact person."""
 
 
-class CompanyListResponseItemCompany(BaseModel):
+class Company(BaseModel):
     address: Optional[str] = None
     """Full registered address of the company."""
 
     commercial_name: Optional[str] = None
     """Trade or commercial name of the company."""
 
-    contact: Optional[CompanyListResponseItemCompanyContact] = None
+    contact: Optional[CompanyContact] = None
     """
     Contact information for the company, including email, phone number, and address.
     """
@@ -91,7 +85,7 @@ class CompanyListResponseItemCompany(BaseModel):
     """Official website URL of the company."""
 
 
-class CompanyListResponseItemMember(BaseModel):
+class Member(BaseModel):
     id: Optional[str] = None
 
     address: Optional[str] = None
@@ -205,7 +199,7 @@ class CompanyListResponseItemMember(BaseModel):
     """
 
 
-class CompanyListResponseItem(BaseModel):
+class CompanyUpdateResponse(BaseModel):
     aml_suspicions: Optional[List[AmlSuspicion]] = None
     """
     List of AML (Anti-Money Laundering) suspicion entries linked to the company,
@@ -224,7 +218,7 @@ class CompanyListResponseItem(BaseModel):
     their results and messages.
     """
 
-    company: Optional[CompanyListResponseItemCompany] = None
+    company: Optional[Company] = None
     """
     Main information about the company being registered, including legal name,
     registration ID, and address.
@@ -236,7 +230,7 @@ class CompanyListResponseItem(BaseModel):
     and processing status.
     """
 
-    members: Optional[List[CompanyListResponseItemMember]] = None
+    members: Optional[List[Member]] = None
     """
     List of members or actors associated with the company, including personal and
     ownership information.
@@ -277,6 +271,3 @@ class CompanyListResponseItem(BaseModel):
     Public-facing webview URL for the company’s identification process, allowing
     external access to the company data.
     """
-
-
-CompanyListResponse: TypeAlias = List[CompanyListResponseItem]
