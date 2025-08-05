@@ -33,10 +33,8 @@ from ..._response import (
     async_to_streamed_response_wrapper,
 )
 from ..._base_client import make_request_options
+from ...types.individual import Individual
 from ...types.individual_list_response import IndividualListResponse
-from ...types.individual_create_response import IndividualCreateResponse
-from ...types.individual_update_response import IndividualUpdateResponse
-from ...types.individual_retrieve_response import IndividualRetrieveResponse
 
 __all__ = ["IndividualsResource", "AsyncIndividualsResource"]
 
@@ -78,7 +76,7 @@ class IndividualsResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> IndividualCreateResponse:
+    ) -> Individual:
         """
         Create a new individual
 
@@ -114,7 +112,7 @@ class IndividualsResource(SyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=IndividualCreateResponse,
+            cast_to=Individual,
         )
 
     def retrieve(
@@ -129,7 +127,7 @@ class IndividualsResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> IndividualRetrieveResponse:
+    ) -> Individual:
         """
         Get an individual by ID
 
@@ -163,7 +161,7 @@ class IndividualsResource(SyncAPIResource):
                     individual_retrieve_params.IndividualRetrieveParams,
                 ),
             ),
-            cast_to=IndividualRetrieveResponse,
+            cast_to=Individual,
         )
 
     def update(
@@ -180,7 +178,7 @@ class IndividualsResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> IndividualUpdateResponse:
+    ) -> Individual:
         """
         Update an individual by ID
 
@@ -218,7 +216,7 @@ class IndividualsResource(SyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=IndividualUpdateResponse,
+            cast_to=Individual,
         )
 
     def list(
@@ -364,7 +362,7 @@ class AsyncIndividualsResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> IndividualCreateResponse:
+    ) -> Individual:
         """
         Create a new individual
 
@@ -400,7 +398,7 @@ class AsyncIndividualsResource(AsyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=IndividualCreateResponse,
+            cast_to=Individual,
         )
 
     async def retrieve(
@@ -415,7 +413,7 @@ class AsyncIndividualsResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> IndividualRetrieveResponse:
+    ) -> Individual:
         """
         Get an individual by ID
 
@@ -449,7 +447,7 @@ class AsyncIndividualsResource(AsyncAPIResource):
                     individual_retrieve_params.IndividualRetrieveParams,
                 ),
             ),
-            cast_to=IndividualRetrieveResponse,
+            cast_to=Individual,
         )
 
     async def update(
@@ -466,7 +464,7 @@ class AsyncIndividualsResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> IndividualUpdateResponse:
+    ) -> Individual:
         """
         Update an individual by ID
 
@@ -504,7 +502,7 @@ class AsyncIndividualsResource(AsyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=IndividualUpdateResponse,
+            cast_to=Individual,
         )
 
     async def list(
