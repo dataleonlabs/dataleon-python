@@ -2,14 +2,8 @@
 
 from __future__ import annotations
 
-from .risk import Risk as Risk
-from .check import Check as Check
-from .company import Company as Company
-from .property import Property as Property
-from .certificat import Certificat as Certificat
-from .individual import Individual as Individual
-from .aml_suspicion import AmlSuspicion as AmlSuspicion
-from .technical_data import TechnicalData as TechnicalData
+from .company_object import CompanyObject as CompanyObject
+from .individual_object import IndividualObject as IndividualObject
 from .company_list_params import CompanyListParams as CompanyListParams
 from .company_create_params import CompanyCreateParams as CompanyCreateParams
 from .company_list_response import CompanyListResponse as CompanyListResponse

@@ -2,17 +2,83 @@
 
 from typing import List, Optional
 from datetime import datetime
+from typing_extensions import Literal
 
-from .risk import Risk
-from .check import Check
+from pydantic import Field as FieldInfo
+
 from .._models import BaseModel
-from .property import Property
-from .certificat import Certificat
-from .aml_suspicion import AmlSuspicion
-from .technical_data import TechnicalData
 from .individuals.generic_document import GenericDocument
 
-__all__ = ["Individual", "IdentityCard", "Person", "Tag"]
+__all__ = [
+    "IndividualObject",
+    "AmlSuspicion",
+    "Certificat",
+    "Check",
+    "IdentityCard",
+    "Person",
+    "Property",
+    "Risk",
+    "Tag",
+    "TechnicalData",
+]
+
+
+class AmlSuspicion(BaseModel):
+    caption: Optional[str] = None
+    """Human-readable description or title for the suspicious finding."""
+
+    checked: Optional[bool] = None
+    """Indicates whether this suspicion has been manually reviewed or confirmed."""
+
+    relation: Optional[str] = None
+    """
+    Nature of the relationship between the entity and the suspicious activity (e.g.,
+    "linked", "associated").
+    """
+
+    schema_: Optional[str] = FieldInfo(alias="schema", default=None)
+    """Version of the evaluation schema or rule engine used."""
+
+    score: Optional[float] = None
+    """Risk score between 0.0 and 1.0 indicating the severity of the suspicion."""
+
+    source: Optional[str] = None
+    """URL identifying the source system or service providing this suspicion."""
+
+    type: Optional[Literal["Watchlist", "PEP", "Sanctions", "RiskyEntity", "Crime"]] = None
+    """Watchlist category associated with the suspicion.
+
+    Possible values include Watchlist types like "PEP", "Sanctions", "RiskyEntity",
+    or "Crime".
+    """
+
+
+class Certificat(BaseModel):
+    id: Optional[str] = None
+    """Unique identifier for the certificate."""
+
+    created_at: Optional[datetime] = None
+    """Timestamp when the certificate was created."""
+
+    filename: Optional[str] = None
+    """Name of the certificate file."""
+
+
+class Check(BaseModel):
+    masked: Optional[bool] = None
+    """Indicates whether the result or data is masked/hidden."""
+
+    message: Optional[str] = None
+    """Additional message or explanation about the check result."""
+
+    name: Optional[str] = None
+    """Name or type of the check performed."""
+
+    validate_: Optional[bool] = FieldInfo(alias="validate", default=None)
+    """Result of the check, true if passed."""
+
+    weight: Optional[int] = None
+    """Importance or weight of the check, often used in scoring."""
 
 
 class IdentityCard(BaseModel):
@@ -91,6 +157,28 @@ class Person(BaseModel):
     """Contact phone number including country code."""
 
 
+class Property(BaseModel):
+    name: Optional[str] = None
+    """Name/key of the property."""
+
+    type: Optional[str] = None
+    """Data type of the property value."""
+
+    value: Optional[str] = None
+    """Value associated with the property name."""
+
+
+class Risk(BaseModel):
+    code: Optional[str] = None
+    """Risk category or code identifier."""
+
+    reason: Optional[str] = None
+    """Explanation or justification for the assigned risk."""
+
+    score: Optional[float] = None
+    """Numeric risk score between 0.0 and 1.0 indicating severity or confidence."""
+
+
 class Tag(BaseModel):
     key: Optional[str] = None
     """Name of the tag used to identify the metadata field."""
@@ -105,7 +193,66 @@ class Tag(BaseModel):
     """Value assigned to the tag."""
 
 
-class Individual(BaseModel):
+class TechnicalData(BaseModel):
+    api_version: Optional[int] = None
+    """Version number of the API used."""
+
+    approved_at: Optional[datetime] = None
+    """Timestamp when the request or process was approved."""
+
+    callback_url: Optional[str] = None
+    """URL to receive callback data from the AML system."""
+
+    callback_url_notification: Optional[str] = None
+    """URL to receive notification updates about the processing status."""
+
+    disable_notification: Optional[bool] = None
+    """Flag to indicate if notifications are disabled."""
+
+    disable_notification_date: Optional[datetime] = None
+    """Timestamp when notifications were disabled; null if never disabled."""
+
+    export_type: Optional[str] = None
+    """Export format defined by the API (e.g., "json", "xml")."""
+
+    finished_at: Optional[datetime] = None
+    """Timestamp when the process finished."""
+
+    ip: Optional[str] = None
+    """IP address of the our system handling the request."""
+
+    language: Optional[str] = None
+    """Language preference used in the client workspace (e.g., "fra")."""
+
+    location_ip: Optional[str] = None
+    """IP address of the end client (final user) captured."""
+
+    need_review_at: Optional[datetime] = None
+    """Timestamp indicating when the request or process needs review; null if none."""
+
+    notification_confirmation: Optional[bool] = None
+    """Flag indicating if notification confirmation is required or received."""
+
+    qr_code: Optional[str] = None
+    """Indicates whether QR code is enabled ("true" or "false")."""
+
+    raw_data: Optional[bool] = None
+    """Flag indicating whether to include raw data in the response."""
+
+    rejected_at: Optional[datetime] = None
+    """Timestamp when the request or process was rejected; null if not rejected."""
+
+    started_at: Optional[datetime] = None
+    """Timestamp when the process started."""
+
+    transfer_at: Optional[datetime] = None
+    """Date/time of data transfer."""
+
+    transfer_mode: Optional[str] = None
+    """Mode of data transfer."""
+
+
+class IndividualObject(BaseModel):
     id: Optional[str] = None
     """Unique identifier of the individual."""
 
