@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
-from .company import Company as Company
+from .shared import Check as Check
 from .individual import Individual as Individual
 from .company_list_params import CompanyListParams as CompanyListParams
+from .company_registration import CompanyRegistration as CompanyRegistration
 from .company_create_params import CompanyCreateParams as CompanyCreateParams
 from .company_list_response import CompanyListResponse as CompanyListResponse
 from .company_update_params import CompanyUpdateParams as CompanyUpdateParams
