@@ -3,8 +3,8 @@
 from typing import List
 from typing_extensions import TypeAlias
 
-from .company import Company
+from .company_registration import CompanyRegistration
 
 __all__ = ["CompanyListResponse"]
 
-CompanyListResponse: TypeAlias = List[Company]
+CompanyListResponse: TypeAlias = List[CompanyRegistration]

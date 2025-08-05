@@ -7,13 +7,13 @@ from typing_extensions import Literal
 from pydantic import Field as FieldInfo
 
 from .._models import BaseModel
+from .shared.check import Check
 from .individuals.generic_document import GenericDocument
 
 __all__ = [
     "Individual",
     "AmlSuspicion",
     "Certificat",
-    "Check",
     "IdentityCard",
     "Person",
     "Property",
@@ -62,23 +62,6 @@ class Certificat(BaseModel):
 
     filename: Optional[str] = None
     """Name of the certificate file."""
-
-
-class Check(BaseModel):
-    masked: Optional[bool] = None
-    """Indicates whether the result or data is masked/hidden."""
-
-    message: Optional[str] = None
-    """Additional message or explanation about the check result."""
-
-    name: Optional[str] = None
-    """Name or type of the check performed."""
-
-    validate_: Optional[bool] = FieldInfo(alias="validate", default=None)
-    """Result of the check, true if passed."""
-
-    weight: Optional[int] = None
-    """Importance or weight of the check, often used in scoring."""
 
 
 class IdentityCard(BaseModel):

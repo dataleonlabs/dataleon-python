@@ -1,15 +1,26 @@
 # File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 from typing import List, Optional
-from datetime import datetime
+from datetime import date, datetime
 from typing_extensions import Literal
 
 from pydantic import Field as FieldInfo
 
 from .._models import BaseModel
+from .shared.check import Check
 from .individuals.generic_document import GenericDocument
 
-__all__ = ["Company", "AmlSuspicion", "Certificat", "Check", "Member", "Property", "Risk", "TechnicalData"]
+__all__ = [
+    "CompanyRegistration",
+    "AmlSuspicion",
+    "Certificat",
+    "Company",
+    "CompanyContact",
+    "Member",
+    "Property",
+    "Risk",
+    "TechnicalData",
+]
 
 
 class AmlSuspicion(BaseModel):
@@ -53,21 +64,73 @@ class Certificat(BaseModel):
     """Name of the certificate file."""
 
 
-class Check(BaseModel):
-    masked: Optional[bool] = None
-    """Indicates whether the result or data is masked/hidden."""
+class CompanyContact(BaseModel):
+    department: Optional[str] = None
+    """Department of the contact person."""
 
-    message: Optional[str] = None
-    """Additional message or explanation about the check result."""
+    email: Optional[str] = None
+    """Email address of the contact person."""
+
+    first_name: Optional[str] = None
+    """First name of the contact person."""
+
+    last_name: Optional[str] = None
+    """Last name of the contact person."""
+
+    phone_number: Optional[str] = None
+    """Phone number of the contact person."""
+
+
+class Company(BaseModel):
+    address: Optional[str] = None
+    """Full registered address of the company."""
+
+    commercial_name: Optional[str] = None
+    """Trade or commercial name of the company."""
+
+    contact: Optional[CompanyContact] = None
+    """
+    Contact information for the company, including email, phone number, and address.
+    """
+
+    country: Optional[str] = None
+    """Country code where the company is registered."""
+
+    email: Optional[str] = None
+    """Contact email address for the company."""
+
+    employer_identification_number: Optional[str] = None
+    """Employer Identification Number (EIN) or equivalent."""
+
+    legal_form: Optional[str] = None
+    """Legal form or structure of the company (e.g., LLC, SARL)."""
 
     name: Optional[str] = None
-    """Name or type of the check performed."""
+    """Legal registered name of the company."""
 
-    validate_: Optional[bool] = FieldInfo(alias="validate", default=None)
-    """Result of the check, true if passed."""
+    phone_number: Optional[str] = None
+    """Contact phone number for the company, including country code."""
 
-    weight: Optional[int] = None
-    """Importance or weight of the check, often used in scoring."""
+    registration_date: Optional[date] = None
+    """Date when the company was officially registered."""
+
+    registration_id: Optional[str] = None
+    """Official company registration number or ID."""
+
+    share_capital: Optional[str] = None
+    """Total share capital of the company, including currency."""
+
+    status: Optional[str] = None
+    """Current status of the company (e.g., active, inactive)."""
+
+    tax_identification_number: Optional[str] = None
+    """Tax identification number for the company."""
+
+    type: Optional[str] = None
+    """Type of company within the workspace, e.g., main or affiliated."""
+
+    website_url: Optional[str] = None
+    """Official website URL of the company."""
 
 
 class Member(BaseModel):
@@ -265,7 +328,7 @@ class TechnicalData(BaseModel):
     """Mode of data transfer."""
 
 
-class Company(BaseModel):
+class CompanyRegistration(BaseModel):
     aml_suspicions: Optional[List[AmlSuspicion]] = None
     """
     List of AML (Anti-Money Laundering) suspicion entries linked to the company,
