@@ -10,7 +10,7 @@ from .._models import BaseModel
 from .individuals.generic_document import GenericDocument
 
 __all__ = [
-    "IndividualObject",
+    "Individual",
     "AmlSuspicion",
     "Certificat",
     "Check",
@@ -252,7 +252,7 @@ class TechnicalData(BaseModel):
     """Mode of data transfer."""
 
 
-class IndividualObject(BaseModel):
+class Individual(BaseModel):
     id: Optional[str] = None
     """Unique identifier of the individual."""
 

@@ -3,8 +3,8 @@
 from typing import List
 from typing_extensions import TypeAlias
 
-from .company_object import CompanyObject
+from .company import Company
 
 __all__ = ["CompanyListResponse"]
 
-CompanyListResponse: TypeAlias = List[CompanyObject]
+CompanyListResponse: TypeAlias = List[Company]
