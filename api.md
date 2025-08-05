@@ -3,14 +3,14 @@
 Types:
 
 ```python
-from dataleon.types import IndividualObject, IndividualListResponse
+from dataleon.types import Individual, IndividualListResponse
 ```
 
 Methods:
 
-- <code title="post /individuals">client.individuals.<a href="./src/dataleon/resources/individuals/individuals.py">create</a>(\*\*<a href="src/dataleon/types/individual_create_params.py">params</a>) -> <a href="./src/dataleon/types/individual_object.py">IndividualObject</a></code>
-- <code title="get /individuals/{id}">client.individuals.<a href="./src/dataleon/resources/individuals/individuals.py">retrieve</a>(id, \*\*<a href="src/dataleon/types/individual_retrieve_params.py">params</a>) -> <a href="./src/dataleon/types/individual_object.py">IndividualObject</a></code>
-- <code title="put /individuals/{id}">client.individuals.<a href="./src/dataleon/resources/individuals/individuals.py">update</a>(id, \*\*<a href="src/dataleon/types/individual_update_params.py">params</a>) -> <a href="./src/dataleon/types/individual_object.py">IndividualObject</a></code>
+- <code title="post /individuals">client.individuals.<a href="./src/dataleon/resources/individuals/individuals.py">create</a>(\*\*<a href="src/dataleon/types/individual_create_params.py">params</a>) -> <a href="./src/dataleon/types/individual.py">Individual</a></code>
+- <code title="get /individuals/{id}">client.individuals.<a href="./src/dataleon/resources/individuals/individuals.py">retrieve</a>(id, \*\*<a href="src/dataleon/types/individual_retrieve_params.py">params</a>) -> <a href="./src/dataleon/types/individual.py">Individual</a></code>
+- <code title="put /individuals/{id}">client.individuals.<a href="./src/dataleon/resources/individuals/individuals.py">update</a>(id, \*\*<a href="src/dataleon/types/individual_update_params.py">params</a>) -> <a href="./src/dataleon/types/individual.py">Individual</a></code>
 - <code title="get /individuals">client.individuals.<a href="./src/dataleon/resources/individuals/individuals.py">list</a>(\*\*<a href="src/dataleon/types/individual_list_params.py">params</a>) -> <a href="./src/dataleon/types/individual_list_response.py">IndividualListResponse</a></code>
 - <code title="delete /individuals/{id}">client.individuals.<a href="./src/dataleon/resources/individuals/individuals.py">delete</a>(id) -> None</code>
 
@@ -32,14 +32,14 @@ Methods:
 Types:
 
 ```python
-from dataleon.types import CompanyObject, CompanyListResponse
+from dataleon.types import Company, CompanyListResponse
 ```
 
 Methods:
 
-- <code title="post /companies">client.companies.<a href="./src/dataleon/resources/companies/companies.py">create</a>(\*\*<a href="src/dataleon/types/company_create_params.py">params</a>) -> <a href="./src/dataleon/types/company_object.py">CompanyObject</a></code>
-- <code title="get /companies/{id}">client.companies.<a href="./src/dataleon/resources/companies/companies.py">retrieve</a>(id, \*\*<a href="src/dataleon/types/company_retrieve_params.py">params</a>) -> <a href="./src/dataleon/types/company_object.py">CompanyObject</a></code>
-- <code title="put /companies/{id}">client.companies.<a href="./src/dataleon/resources/companies/companies.py">update</a>(id, \*\*<a href="src/dataleon/types/company_update_params.py">params</a>) -> <a href="./src/dataleon/types/company_object.py">CompanyObject</a></code>
+- <code title="post /companies">client.companies.<a href="./src/dataleon/resources/companies/companies.py">create</a>(\*\*<a href="src/dataleon/types/company_create_params.py">params</a>) -> <a href="./src/dataleon/types/company.py">Company</a></code>
+- <code title="get /companies/{id}">client.companies.<a href="./src/dataleon/resources/companies/companies.py">retrieve</a>(id, \*\*<a href="src/dataleon/types/company_retrieve_params.py">params</a>) -> <a href="./src/dataleon/types/company.py">Company</a></code>
+- <code title="put /companies/{id}">client.companies.<a href="./src/dataleon/resources/companies/companies.py">update</a>(id, \*\*<a href="src/dataleon/types/company_update_params.py">params</a>) -> <a href="./src/dataleon/types/company.py">Company</a></code>
 - <code title="get /companies">client.companies.<a href="./src/dataleon/resources/companies/companies.py">list</a>(\*\*<a href="src/dataleon/types/company_list_params.py">params</a>) -> <a href="./src/dataleon/types/company_list_response.py">CompanyListResponse</a></code>
 - <code title="delete /companies/{id}">client.companies.<a href="./src/dataleon/resources/companies/companies.py">delete</a>(id) -> None</code>
 

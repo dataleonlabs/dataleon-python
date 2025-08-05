@@ -3,8 +3,8 @@
 from typing import List
 from typing_extensions import TypeAlias
 
-from .individual_object import IndividualObject
+from .individual import Individual
 
 __all__ = ["IndividualListResponse"]
 
-IndividualListResponse: TypeAlias = List[IndividualObject]
+IndividualListResponse: TypeAlias = List[Individual]

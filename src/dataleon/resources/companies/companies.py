@@ -28,7 +28,7 @@ from ..._response import (
     async_to_streamed_response_wrapper,
 )
 from ..._base_client import make_request_options
-from ...types.company_object import CompanyObject
+from ...types.company import Company
 from ...types.company_list_response import CompanyListResponse
 
 __all__ = ["CompaniesResource", "AsyncCompaniesResource"]
@@ -71,7 +71,7 @@ class CompaniesResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> CompanyObject:
+    ) -> Company:
         """
         Create a new company
 
@@ -107,7 +107,7 @@ class CompaniesResource(SyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=CompanyObject,
+            cast_to=Company,
         )
 
     def retrieve(
@@ -122,7 +122,7 @@ class CompaniesResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> CompanyObject:
+    ) -> Company:
         """
         Get a company by ID
 
@@ -156,7 +156,7 @@ class CompaniesResource(SyncAPIResource):
                     company_retrieve_params.CompanyRetrieveParams,
                 ),
             ),
-            cast_to=CompanyObject,
+            cast_to=Company,
         )
 
     def update(
@@ -173,7 +173,7 @@ class CompaniesResource(SyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> CompanyObject:
+    ) -> Company:
         """
         Update a company by ID
 
@@ -211,7 +211,7 @@ class CompaniesResource(SyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=CompanyObject,
+            cast_to=Company,
         )
 
     def list(
@@ -357,7 +357,7 @@ class AsyncCompaniesResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> CompanyObject:
+    ) -> Company:
         """
         Create a new company
 
@@ -393,7 +393,7 @@ class AsyncCompaniesResource(AsyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=CompanyObject,
+            cast_to=Company,
         )
 
     async def retrieve(
@@ -408,7 +408,7 @@ class AsyncCompaniesResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> CompanyObject:
+    ) -> Company:
         """
         Get a company by ID
 
@@ -442,7 +442,7 @@ class AsyncCompaniesResource(AsyncAPIResource):
                     company_retrieve_params.CompanyRetrieveParams,
                 ),
             ),
-            cast_to=CompanyObject,
+            cast_to=Company,
         )
 
     async def update(
@@ -459,7 +459,7 @@ class AsyncCompaniesResource(AsyncAPIResource):
         extra_query: Query | None = None,
         extra_body: Body | None = None,
         timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
-    ) -> CompanyObject:
+    ) -> Company:
         """
         Update a company by ID
 
@@ -497,7 +497,7 @@ class AsyncCompaniesResource(AsyncAPIResource):
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
-            cast_to=CompanyObject,
+            cast_to=Company,
         )
 
     async def list(

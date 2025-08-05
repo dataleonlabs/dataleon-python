@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from .company_object import CompanyObject as CompanyObject
-from .individual_object import IndividualObject as IndividualObject
+from .company import Company as Company
+from .individual import Individual as Individual
 from .company_list_params import CompanyListParams as CompanyListParams
 from .company_create_params import CompanyCreateParams as CompanyCreateParams
 from .company_list_response import CompanyListResponse as CompanyListResponse
