@@ -8,22 +8,8 @@ from .companies import (
     CompaniesResourceWithStreamingResponse,
     AsyncCompaniesResourceWithStreamingResponse,
 )
-from .documents import (
-    DocumentsResource,
-    AsyncDocumentsResource,
-    DocumentsResourceWithRawResponse,
-    AsyncDocumentsResourceWithRawResponse,
-    DocumentsResourceWithStreamingResponse,
-    AsyncDocumentsResourceWithStreamingResponse,
-)
 
 __all__ = [
-    "DocumentsResource",
-    "AsyncDocumentsResource",
-    "DocumentsResourceWithRawResponse",
-    "AsyncDocumentsResourceWithRawResponse",
-    "DocumentsResourceWithStreamingResponse",
-    "AsyncDocumentsResourceWithStreamingResponse",
     "CompaniesResource",
     "AsyncCompaniesResource",
     "CompaniesResourceWithRawResponse",

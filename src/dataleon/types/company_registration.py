@@ -15,7 +15,6 @@ __all__ = [
     "AmlSuspicion",
     "Certificat",
     "Company",
-    "CompanyContact",
     "Member",
     "Property",
     "Risk",
@@ -64,34 +63,12 @@ class Certificat(BaseModel):
     """Name of the certificate file."""
 
 
-class CompanyContact(BaseModel):
-    department: Optional[str] = None
-    """Department of the contact person."""
-
-    email: Optional[str] = None
-    """Email address of the contact person."""
-
-    first_name: Optional[str] = None
-    """First name of the contact person."""
-
-    last_name: Optional[str] = None
-    """Last name of the contact person."""
-
-    phone_number: Optional[str] = None
-    """Phone number of the contact person."""
-
-
 class Company(BaseModel):
     address: Optional[str] = None
     """Full registered address of the company."""
 
     commercial_name: Optional[str] = None
     """Trade or commercial name of the company."""
-
-    contact: Optional[CompanyContact] = None
-    """
-    Contact information for the company, including email, phone number, and address.
-    """
 
     country: Optional[str] = None
     """Country code where the company is registered."""
@@ -311,9 +288,6 @@ class TechnicalData(BaseModel):
 
     qr_code: Optional[str] = None
     """Indicates whether QR code is enabled ("true" or "false")."""
-
-    raw_data: Optional[bool] = None
-    """Flag indicating whether to include raw data in the response."""
 
     rejected_at: Optional[datetime] = None
     """Timestamp when the request or process was rejected; null if not rejected."""
