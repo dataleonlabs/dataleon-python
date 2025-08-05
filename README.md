@@ -35,11 +35,10 @@ client = Dataleon(
     api_key=os.environ.get("DATALEON_API_KEY"),  # This is the default and can be omitted
 )
 
-company_registration = client.companies.create(
-    company={"name": "ACME Corp"},
+individual = client.individuals.create(
     workspace_id="wk_123",
 )
-print(company_registration.source_id)
+print(individual.id)
 ```
 
 While you can provide an `api_key` keyword argument,
@@ -62,11 +61,10 @@ client = AsyncDataleon(
 
 
 async def main() -> None:
-    company_registration = await client.companies.create(
-        company={"name": "ACME Corp"},
+    individual = await client.individuals.create(
         workspace_id="wk_123",
     )
-    print(company_registration.source_id)
+    print(individual.id)
 
 
 asyncio.run(main())
@@ -98,11 +96,10 @@ async def main() -> None:
         api_key="My API Key",
         http_client=DefaultAioHttpClient(),
     ) as client:
-        company_registration = await client.companies.create(
-            company={"name": "ACME Corp"},
+        individual = await client.individuals.create(
             workspace_id="wk_123",
         )
-        print(company_registration.source_id)
+        print(individual.id)
 
 
 asyncio.run(main())
@@ -126,11 +123,11 @@ from dataleon import Dataleon
 
 client = Dataleon()
 
-company_registration = client.companies.create(
-    company={"name": "ACME Corp"},
+individual = client.individuals.create(
     workspace_id="wk_123",
+    person={},
 )
-print(company_registration.company)
+print(individual.person)
 ```
 
 ## File uploads
