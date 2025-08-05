@@ -10,10 +10,8 @@ import pytest
 from dataleon import Dataleon, AsyncDataleon
 from tests.utils import assert_matches_type
 from dataleon.types import (
+    Individual,
     IndividualListResponse,
-    IndividualCreateResponse,
-    IndividualUpdateResponse,
-    IndividualRetrieveResponse,
 )
 from dataleon._utils import parse_date
 
@@ -29,7 +27,7 @@ class TestIndividuals:
         individual = client.individuals.create(
             workspace_id="wk_123",
         )
-        assert_matches_type(IndividualCreateResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -53,7 +51,7 @@ class TestIndividuals:
                 "raw_data": True,
             },
         )
-        assert_matches_type(IndividualCreateResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -65,7 +63,7 @@ class TestIndividuals:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         individual = response.parse()
-        assert_matches_type(IndividualCreateResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -77,7 +75,7 @@ class TestIndividuals:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             individual = response.parse()
-            assert_matches_type(IndividualCreateResponse, individual, path=["response"])
+            assert_matches_type(Individual, individual, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -87,7 +85,7 @@ class TestIndividuals:
         individual = client.individuals.retrieve(
             id="id",
         )
-        assert_matches_type(IndividualRetrieveResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -97,7 +95,7 @@ class TestIndividuals:
             document=True,
             scope="scope",
         )
-        assert_matches_type(IndividualRetrieveResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -109,7 +107,7 @@ class TestIndividuals:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         individual = response.parse()
-        assert_matches_type(IndividualRetrieveResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -121,7 +119,7 @@ class TestIndividuals:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             individual = response.parse()
-            assert_matches_type(IndividualRetrieveResponse, individual, path=["response"])
+            assert_matches_type(Individual, individual, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -140,7 +138,7 @@ class TestIndividuals:
             id="id",
             workspace_id="wk_123",
         )
-        assert_matches_type(IndividualUpdateResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -165,7 +163,7 @@ class TestIndividuals:
                 "raw_data": True,
             },
         )
-        assert_matches_type(IndividualUpdateResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -178,7 +176,7 @@ class TestIndividuals:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         individual = response.parse()
-        assert_matches_type(IndividualUpdateResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -191,7 +189,7 @@ class TestIndividuals:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             individual = response.parse()
-            assert_matches_type(IndividualUpdateResponse, individual, path=["response"])
+            assert_matches_type(Individual, individual, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -301,7 +299,7 @@ class TestAsyncIndividuals:
         individual = await async_client.individuals.create(
             workspace_id="wk_123",
         )
-        assert_matches_type(IndividualCreateResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -325,7 +323,7 @@ class TestAsyncIndividuals:
                 "raw_data": True,
             },
         )
-        assert_matches_type(IndividualCreateResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -337,7 +335,7 @@ class TestAsyncIndividuals:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         individual = await response.parse()
-        assert_matches_type(IndividualCreateResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -349,7 +347,7 @@ class TestAsyncIndividuals:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             individual = await response.parse()
-            assert_matches_type(IndividualCreateResponse, individual, path=["response"])
+            assert_matches_type(Individual, individual, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -359,7 +357,7 @@ class TestAsyncIndividuals:
         individual = await async_client.individuals.retrieve(
             id="id",
         )
-        assert_matches_type(IndividualRetrieveResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -369,7 +367,7 @@ class TestAsyncIndividuals:
             document=True,
             scope="scope",
         )
-        assert_matches_type(IndividualRetrieveResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -381,7 +379,7 @@ class TestAsyncIndividuals:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         individual = await response.parse()
-        assert_matches_type(IndividualRetrieveResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -393,7 +391,7 @@ class TestAsyncIndividuals:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             individual = await response.parse()
-            assert_matches_type(IndividualRetrieveResponse, individual, path=["response"])
+            assert_matches_type(Individual, individual, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -412,7 +410,7 @@ class TestAsyncIndividuals:
             id="id",
             workspace_id="wk_123",
         )
-        assert_matches_type(IndividualUpdateResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -437,7 +435,7 @@ class TestAsyncIndividuals:
                 "raw_data": True,
             },
         )
-        assert_matches_type(IndividualUpdateResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -450,7 +448,7 @@ class TestAsyncIndividuals:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         individual = await response.parse()
-        assert_matches_type(IndividualUpdateResponse, individual, path=["response"])
+        assert_matches_type(Individual, individual, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -463,7 +461,7 @@ class TestAsyncIndividuals:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             individual = await response.parse()
-            assert_matches_type(IndividualUpdateResponse, individual, path=["response"])
+            assert_matches_type(Individual, individual, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 

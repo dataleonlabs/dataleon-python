@@ -12,7 +12,7 @@ from .aml_suspicion import AmlSuspicion
 from .technical_data import TechnicalData
 from .individuals.generic_document import GenericDocument
 
-__all__ = ["IndividualUpdateResponse", "IdentityCard", "Person", "Tag"]
+__all__ = ["Individual", "IdentityCard", "Person", "Tag"]
 
 
 class IdentityCard(BaseModel):
@@ -105,7 +105,7 @@ class Tag(BaseModel):
     """Value assigned to the tag."""
 
 
-class IndividualUpdateResponse(BaseModel):
+class Individual(BaseModel):
     id: Optional[str] = None
     """Unique identifier of the individual."""
 

@@ -10,10 +10,8 @@ import pytest
 from dataleon import Dataleon, AsyncDataleon
 from tests.utils import assert_matches_type
 from dataleon.types import (
+    Company,
     CompanyListResponse,
-    CompanyCreateResponse,
-    CompanyUpdateResponse,
-    CompanyRetrieveResponse,
 )
 from dataleon._utils import parse_date
 
@@ -30,7 +28,7 @@ class TestCompanies:
             company={"name": "ACME Corp"},
             workspace_id="wk_123",
         )
-        assert_matches_type(CompanyCreateResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -62,7 +60,7 @@ class TestCompanies:
                 "raw_data": True,
             },
         )
-        assert_matches_type(CompanyCreateResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -75,7 +73,7 @@ class TestCompanies:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         company = response.parse()
-        assert_matches_type(CompanyCreateResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -88,7 +86,7 @@ class TestCompanies:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             company = response.parse()
-            assert_matches_type(CompanyCreateResponse, company, path=["response"])
+            assert_matches_type(Company, company, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -98,7 +96,7 @@ class TestCompanies:
         company = client.companies.retrieve(
             id="id",
         )
-        assert_matches_type(CompanyRetrieveResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -108,7 +106,7 @@ class TestCompanies:
             document=True,
             scope="scope",
         )
-        assert_matches_type(CompanyRetrieveResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -120,7 +118,7 @@ class TestCompanies:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         company = response.parse()
-        assert_matches_type(CompanyRetrieveResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -132,7 +130,7 @@ class TestCompanies:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             company = response.parse()
-            assert_matches_type(CompanyRetrieveResponse, company, path=["response"])
+            assert_matches_type(Company, company, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -152,7 +150,7 @@ class TestCompanies:
             company={"name": "ACME Corp"},
             workspace_id="wk_123",
         )
-        assert_matches_type(CompanyUpdateResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -185,7 +183,7 @@ class TestCompanies:
                 "raw_data": True,
             },
         )
-        assert_matches_type(CompanyUpdateResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -199,7 +197,7 @@ class TestCompanies:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         company = response.parse()
-        assert_matches_type(CompanyUpdateResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -213,7 +211,7 @@ class TestCompanies:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             company = response.parse()
-            assert_matches_type(CompanyUpdateResponse, company, path=["response"])
+            assert_matches_type(Company, company, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -325,7 +323,7 @@ class TestAsyncCompanies:
             company={"name": "ACME Corp"},
             workspace_id="wk_123",
         )
-        assert_matches_type(CompanyCreateResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -357,7 +355,7 @@ class TestAsyncCompanies:
                 "raw_data": True,
             },
         )
-        assert_matches_type(CompanyCreateResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -370,7 +368,7 @@ class TestAsyncCompanies:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         company = await response.parse()
-        assert_matches_type(CompanyCreateResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -383,7 +381,7 @@ class TestAsyncCompanies:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             company = await response.parse()
-            assert_matches_type(CompanyCreateResponse, company, path=["response"])
+            assert_matches_type(Company, company, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -393,7 +391,7 @@ class TestAsyncCompanies:
         company = await async_client.companies.retrieve(
             id="id",
         )
-        assert_matches_type(CompanyRetrieveResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -403,7 +401,7 @@ class TestAsyncCompanies:
             document=True,
             scope="scope",
         )
-        assert_matches_type(CompanyRetrieveResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -415,7 +413,7 @@ class TestAsyncCompanies:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         company = await response.parse()
-        assert_matches_type(CompanyRetrieveResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -427,7 +425,7 @@ class TestAsyncCompanies:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             company = await response.parse()
-            assert_matches_type(CompanyRetrieveResponse, company, path=["response"])
+            assert_matches_type(Company, company, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
@@ -447,7 +445,7 @@ class TestAsyncCompanies:
             company={"name": "ACME Corp"},
             workspace_id="wk_123",
         )
-        assert_matches_type(CompanyUpdateResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -480,7 +478,7 @@ class TestAsyncCompanies:
                 "raw_data": True,
             },
         )
-        assert_matches_type(CompanyUpdateResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -494,7 +492,7 @@ class TestAsyncCompanies:
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
         company = await response.parse()
-        assert_matches_type(CompanyUpdateResponse, company, path=["response"])
+        assert_matches_type(Company, company, path=["response"])
 
     @pytest.mark.skip()
     @parametrize
@@ -508,7 +506,7 @@ class TestAsyncCompanies:
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
             company = await response.parse()
-            assert_matches_type(CompanyUpdateResponse, company, path=["response"])
+            assert_matches_type(Company, company, path=["response"])
 
         assert cast(Any, response.is_closed) is True
 
