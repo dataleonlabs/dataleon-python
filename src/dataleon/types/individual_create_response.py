@@ -2,7 +2,6 @@
 
 from typing import List, Optional
 from datetime import datetime
-from typing_extensions import TypeAlias
 
 from .risk import Risk
 from .check import Check
@@ -13,16 +12,10 @@ from .aml_suspicion import AmlSuspicion
 from .technical_data import TechnicalData
 from .individuals.generic_document import GenericDocument
 
-__all__ = [
-    "IndividualListResponse",
-    "IndividualListResponseItem",
-    "IndividualListResponseItemIdentityCard",
-    "IndividualListResponseItemPerson",
-    "IndividualListResponseItemTag",
-]
+__all__ = ["IndividualCreateResponse", "IdentityCard", "Person", "Tag"]
 
 
-class IndividualListResponseItemIdentityCard(BaseModel):
+class IdentityCard(BaseModel):
     id: Optional[str] = None
     """Unique identifier for the document."""
 
@@ -69,7 +62,7 @@ class IndividualListResponseItemIdentityCard(BaseModel):
     """Type of document (e.g., passport, identity card)."""
 
 
-class IndividualListResponseItemPerson(BaseModel):
+class Person(BaseModel):
     birthday: Optional[str] = None
     """Date of birth, formatted as DD/MM/YYYY."""
 
@@ -98,7 +91,7 @@ class IndividualListResponseItemPerson(BaseModel):
     """Contact phone number including country code."""
 
 
-class IndividualListResponseItemTag(BaseModel):
+class Tag(BaseModel):
     key: Optional[str] = None
     """Name of the tag used to identify the metadata field."""
 
@@ -112,7 +105,7 @@ class IndividualListResponseItemTag(BaseModel):
     """Value assigned to the tag."""
 
 
-class IndividualListResponseItem(BaseModel):
+class IndividualCreateResponse(BaseModel):
     id: Optional[str] = None
     """Unique identifier of the individual."""
 
@@ -134,13 +127,13 @@ class IndividualListResponseItem(BaseModel):
     documents: Optional[List[GenericDocument]] = None
     """All documents submitted or associated with the individual."""
 
-    identity_card: Optional[IndividualListResponseItemIdentityCard] = None
+    identity_card: Optional[IdentityCard] = None
     """Reference to the individual's identity document."""
 
     number: Optional[int] = None
     """Internal sequential number or reference for the individual."""
 
-    person: Optional[IndividualListResponseItemPerson] = None
+    person: Optional[Person] = None
     """
     Personal details of the individual, such as name, date of birth, and contact
     info.
@@ -170,7 +163,7 @@ class IndividualListResponseItem(BaseModel):
     approved).
     """
 
-    tags: Optional[List[IndividualListResponseItemTag]] = None
+    tags: Optional[List[Tag]] = None
     """
     List of tags assigned to the individual for categorization or metadata purposes.
     """
@@ -183,6 +176,3 @@ class IndividualListResponseItem(BaseModel):
 
     workspace_id: Optional[str] = None
     """Identifier of the workspace to which the individual belongs."""
-
-
-IndividualListResponse: TypeAlias = List[IndividualListResponseItem]
