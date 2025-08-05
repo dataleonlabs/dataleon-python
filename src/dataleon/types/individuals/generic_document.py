@@ -3,10 +3,28 @@
 from typing import List, Optional
 from datetime import datetime
 
-from ..check import Check
+from pydantic import Field as FieldInfo
+
 from ..._models import BaseModel
 
-__all__ = ["GenericDocument", "Table", "Value"]
+__all__ = ["GenericDocument", "Check", "Table", "Value"]
+
+
+class Check(BaseModel):
+    masked: Optional[bool] = None
+    """Indicates whether the result or data is masked/hidden."""
+
+    message: Optional[str] = None
+    """Additional message or explanation about the check result."""
+
+    name: Optional[str] = None
+    """Name or type of the check performed."""
+
+    validate_: Optional[bool] = FieldInfo(alias="validate", default=None)
+    """Result of the check, true if passed."""
+
+    weight: Optional[int] = None
+    """Importance or weight of the check, often used in scoring."""
 
 
 class Table(BaseModel):
