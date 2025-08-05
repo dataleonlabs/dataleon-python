@@ -219,9 +219,6 @@ class TechnicalData(BaseModel):
     qr_code: Optional[str] = None
     """Indicates whether QR code is enabled ("true" or "false")."""
 
-    raw_data: Optional[bool] = None
-    """Flag indicating whether to include raw data in the response."""
-
     rejected_at: Optional[datetime] = None
     """Timestamp when the request or process was rejected; null if not rejected."""
 
