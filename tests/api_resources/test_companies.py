@@ -21,7 +21,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestCompanies:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create(self, client: Dataleon) -> None:
         company = client.companies.create(
@@ -30,7 +30,7 @@ class TestCompanies:
         )
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: Dataleon) -> None:
         company = client.companies.create(
@@ -62,7 +62,7 @@ class TestCompanies:
         )
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: Dataleon) -> None:
         response = client.companies.with_raw_response.create(
@@ -75,7 +75,7 @@ class TestCompanies:
         company = response.parse()
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: Dataleon) -> None:
         with client.companies.with_streaming_response.create(
@@ -90,7 +90,7 @@ class TestCompanies:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: Dataleon) -> None:
         company = client.companies.retrieve(
@@ -98,7 +98,7 @@ class TestCompanies:
         )
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_retrieve_with_all_params(self, client: Dataleon) -> None:
         company = client.companies.retrieve(
@@ -108,7 +108,7 @@ class TestCompanies:
         )
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: Dataleon) -> None:
         response = client.companies.with_raw_response.retrieve(
@@ -120,7 +120,7 @@ class TestCompanies:
         company = response.parse()
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: Dataleon) -> None:
         with client.companies.with_streaming_response.retrieve(
@@ -134,7 +134,7 @@ class TestCompanies:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: Dataleon) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `company_id` but received ''"):
@@ -142,7 +142,7 @@ class TestCompanies:
                 company_id="",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_update(self, client: Dataleon) -> None:
         company = client.companies.update(
@@ -152,7 +152,7 @@ class TestCompanies:
         )
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_update_with_all_params(self, client: Dataleon) -> None:
         company = client.companies.update(
@@ -185,7 +185,7 @@ class TestCompanies:
         )
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_update(self, client: Dataleon) -> None:
         response = client.companies.with_raw_response.update(
@@ -199,7 +199,7 @@ class TestCompanies:
         company = response.parse()
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_update(self, client: Dataleon) -> None:
         with client.companies.with_streaming_response.update(
@@ -215,7 +215,7 @@ class TestCompanies:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_update(self, client: Dataleon) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `company_id` but received ''"):
@@ -225,13 +225,13 @@ class TestCompanies:
                 workspace_id="wk_123",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_list(self, client: Dataleon) -> None:
         company = client.companies.list()
         assert_matches_type(CompanyListResponse, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_list_with_all_params(self, client: Dataleon) -> None:
         company = client.companies.list(
@@ -246,7 +246,7 @@ class TestCompanies:
         )
         assert_matches_type(CompanyListResponse, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_list(self, client: Dataleon) -> None:
         response = client.companies.with_raw_response.list()
@@ -256,7 +256,7 @@ class TestCompanies:
         company = response.parse()
         assert_matches_type(CompanyListResponse, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_list(self, client: Dataleon) -> None:
         with client.companies.with_streaming_response.list() as response:
@@ -268,7 +268,7 @@ class TestCompanies:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_delete(self, client: Dataleon) -> None:
         company = client.companies.delete(
@@ -276,7 +276,7 @@ class TestCompanies:
         )
         assert company is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: Dataleon) -> None:
         response = client.companies.with_raw_response.delete(
@@ -288,7 +288,7 @@ class TestCompanies:
         company = response.parse()
         assert company is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: Dataleon) -> None:
         with client.companies.with_streaming_response.delete(
@@ -302,7 +302,7 @@ class TestCompanies:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_delete(self, client: Dataleon) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `company_id` but received ''"):
@@ -316,7 +316,7 @@ class TestAsyncCompanies:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncDataleon) -> None:
         company = await async_client.companies.create(
@@ -325,7 +325,7 @@ class TestAsyncCompanies:
         )
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncDataleon) -> None:
         company = await async_client.companies.create(
@@ -357,7 +357,7 @@ class TestAsyncCompanies:
         )
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncDataleon) -> None:
         response = await async_client.companies.with_raw_response.create(
@@ -370,7 +370,7 @@ class TestAsyncCompanies:
         company = await response.parse()
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncDataleon) -> None:
         async with async_client.companies.with_streaming_response.create(
@@ -385,7 +385,7 @@ class TestAsyncCompanies:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncDataleon) -> None:
         company = await async_client.companies.retrieve(
@@ -393,7 +393,7 @@ class TestAsyncCompanies:
         )
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_retrieve_with_all_params(self, async_client: AsyncDataleon) -> None:
         company = await async_client.companies.retrieve(
@@ -403,7 +403,7 @@ class TestAsyncCompanies:
         )
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncDataleon) -> None:
         response = await async_client.companies.with_raw_response.retrieve(
@@ -415,7 +415,7 @@ class TestAsyncCompanies:
         company = await response.parse()
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncDataleon) -> None:
         async with async_client.companies.with_streaming_response.retrieve(
@@ -429,7 +429,7 @@ class TestAsyncCompanies:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncDataleon) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `company_id` but received ''"):
@@ -437,7 +437,7 @@ class TestAsyncCompanies:
                 company_id="",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_update(self, async_client: AsyncDataleon) -> None:
         company = await async_client.companies.update(
@@ -447,7 +447,7 @@ class TestAsyncCompanies:
         )
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_update_with_all_params(self, async_client: AsyncDataleon) -> None:
         company = await async_client.companies.update(
@@ -480,7 +480,7 @@ class TestAsyncCompanies:
         )
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncDataleon) -> None:
         response = await async_client.companies.with_raw_response.update(
@@ -494,7 +494,7 @@ class TestAsyncCompanies:
         company = await response.parse()
         assert_matches_type(CompanyRegistration, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncDataleon) -> None:
         async with async_client.companies.with_streaming_response.update(
@@ -510,7 +510,7 @@ class TestAsyncCompanies:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_update(self, async_client: AsyncDataleon) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `company_id` but received ''"):
@@ -520,13 +520,13 @@ class TestAsyncCompanies:
                 workspace_id="wk_123",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_list(self, async_client: AsyncDataleon) -> None:
         company = await async_client.companies.list()
         assert_matches_type(CompanyListResponse, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_list_with_all_params(self, async_client: AsyncDataleon) -> None:
         company = await async_client.companies.list(
@@ -541,7 +541,7 @@ class TestAsyncCompanies:
         )
         assert_matches_type(CompanyListResponse, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncDataleon) -> None:
         response = await async_client.companies.with_raw_response.list()
@@ -551,7 +551,7 @@ class TestAsyncCompanies:
         company = await response.parse()
         assert_matches_type(CompanyListResponse, company, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncDataleon) -> None:
         async with async_client.companies.with_streaming_response.list() as response:
@@ -563,7 +563,7 @@ class TestAsyncCompanies:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncDataleon) -> None:
         company = await async_client.companies.delete(
@@ -571,7 +571,7 @@ class TestAsyncCompanies:
         )
         assert company is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncDataleon) -> None:
         response = await async_client.companies.with_raw_response.delete(
@@ -583,7 +583,7 @@ class TestAsyncCompanies:
         company = await response.parse()
         assert company is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncDataleon) -> None:
         async with async_client.companies.with_streaming_response.delete(
@@ -597,7 +597,7 @@ class TestAsyncCompanies:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_delete(self, async_client: AsyncDataleon) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `company_id` but received ''"):
