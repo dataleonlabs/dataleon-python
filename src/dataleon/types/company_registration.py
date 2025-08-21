@@ -85,6 +85,9 @@ class Company(BaseModel):
     address: Optional[str] = None
     """Full registered address of the company."""
 
+    closure_date: Optional[date] = None
+    """Closure date of the company, if applicable."""
+
     commercial_name: Optional[str] = None
     """Trade or commercial name of the company."""
 
@@ -99,8 +102,17 @@ class Company(BaseModel):
     email: Optional[str] = None
     """Contact email address for the company."""
 
+    employees: Optional[int] = None
+    """Number of employees in the company."""
+
     employer_identification_number: Optional[str] = None
     """Employer Identification Number (EIN) or equivalent."""
+
+    insolvency_exists: Optional[bool] = None
+    """Indicates whether an insolvency procedure exists for the company."""
+
+    insolvency_ongoing: Optional[bool] = None
+    """Indicates whether an insolvency procedure is ongoing for the company."""
 
     legal_form: Optional[str] = None
     """Legal form or structure of the company (e.g., LLC, SARL)."""
@@ -317,6 +329,9 @@ class TechnicalData(BaseModel):
 
     rejected_at: Optional[datetime] = None
     """Timestamp when the request or process was rejected; null if not rejected."""
+
+    session_duration: Optional[int] = None
+    """Duration of the user session in seconds."""
 
     started_at: Optional[datetime] = None
     """Timestamp when the process started."""
