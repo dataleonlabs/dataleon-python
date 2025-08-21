@@ -225,6 +225,9 @@ class TechnicalData(BaseModel):
     rejected_at: Optional[datetime] = None
     """Timestamp when the request or process was rejected; null if not rejected."""
 
+    session_duration: Optional[int] = None
+    """Duration of the user session in seconds."""
+
     started_at: Optional[datetime] = None
     """Timestamp when the process started."""
 
