@@ -43,7 +43,7 @@ class AmlSuspicion(BaseModel):
     """Version of the evaluation schema or rule engine used."""
 
     score: Optional[float] = None
-    """Risk score between 0.0 and 0.85 indicating the severity of the suspicion."""
+    """Risk score between 0.0 and 1 indicating the severity of the suspicion."""
 
     source: Optional[str] = None
     """Source system or service providing this suspicion."""
