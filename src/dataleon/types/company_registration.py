@@ -290,6 +290,12 @@ class Risk(BaseModel):
 
 
 class TechnicalData(BaseModel):
+    active_aml_suspicions: Optional[bool] = None
+    """
+    Flag indicating whether there are active research AML (Anti-Money Laundering)
+    suspicions for the object when you apply for a new entry or get an existing one.
+    """
+
     api_version: Optional[int] = None
     """Version number of the API used."""
 
