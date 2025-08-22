@@ -45,6 +45,7 @@ class TestIndividuals:
             },
             source_id="ID54410069066",
             technical_data={
+                "active_aml_suspicions": False,
                 "callback_url": "https://example.com/callback",
                 "callback_url_notification": "https://example.com/notify",
                 "language": "fra",
@@ -157,6 +158,7 @@ class TestIndividuals:
             },
             source_id="ID54410069066",
             technical_data={
+                "active_aml_suspicions": False,
                 "callback_url": "https://example.com/callback",
                 "callback_url_notification": "https://example.com/notify",
                 "language": "fra",
@@ -317,6 +319,7 @@ class TestAsyncIndividuals:
             },
             source_id="ID54410069066",
             technical_data={
+                "active_aml_suspicions": False,
                 "callback_url": "https://example.com/callback",
                 "callback_url_notification": "https://example.com/notify",
                 "language": "fra",
@@ -429,6 +432,7 @@ class TestAsyncIndividuals:
             },
             source_id="ID54410069066",
             technical_data={
+                "active_aml_suspicions": False,
                 "callback_url": "https://example.com/callback",
                 "callback_url_notification": "https://example.com/notify",
                 "language": "fra",

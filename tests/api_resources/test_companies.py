@@ -54,6 +54,7 @@ class TestCompanies:
             workspace_id="wk_123",
             source_id="ID54410069066",
             technical_data={
+                "active_aml_suspicions": False,
                 "callback_url": "https://example.com/callback",
                 "callback_url_notification": "https://example.com/notify",
                 "language": "fra",
@@ -177,6 +178,7 @@ class TestCompanies:
             workspace_id="wk_123",
             source_id="ID54410069066",
             technical_data={
+                "active_aml_suspicions": False,
                 "callback_url": "https://example.com/callback",
                 "callback_url_notification": "https://example.com/notify",
                 "language": "fra",
@@ -349,6 +351,7 @@ class TestAsyncCompanies:
             workspace_id="wk_123",
             source_id="ID54410069066",
             technical_data={
+                "active_aml_suspicions": False,
                 "callback_url": "https://example.com/callback",
                 "callback_url_notification": "https://example.com/notify",
                 "language": "fra",
@@ -472,6 +475,7 @@ class TestAsyncCompanies:
             workspace_id="wk_123",
             source_id="ID54410069066",
             technical_data={
+                "active_aml_suspicions": False,
                 "callback_url": "https://example.com/callback",
                 "callback_url_notification": "https://example.com/notify",
                 "language": "fra",
