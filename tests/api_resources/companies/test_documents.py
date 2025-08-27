@@ -64,7 +64,7 @@ class TestDocuments:
     def test_method_upload(self, client: Dataleon) -> None:
         document = client.companies.documents.upload(
             company_id="company_id",
-            document_type="bank_statements",
+            document_type="liasse_fiscale",
         )
         assert_matches_type(GenericDocument, document, path=["response"])
 
@@ -73,7 +73,7 @@ class TestDocuments:
     def test_method_upload_with_all_params(self, client: Dataleon) -> None:
         document = client.companies.documents.upload(
             company_id="company_id",
-            document_type="bank_statements",
+            document_type="liasse_fiscale",
             file=b"raw file contents",
             url="https://example.com/sample.pdf",
         )
@@ -84,7 +84,7 @@ class TestDocuments:
     def test_raw_response_upload(self, client: Dataleon) -> None:
         response = client.companies.documents.with_raw_response.upload(
             company_id="company_id",
-            document_type="bank_statements",
+            document_type="liasse_fiscale",
         )
 
         assert response.is_closed is True
@@ -97,7 +97,7 @@ class TestDocuments:
     def test_streaming_response_upload(self, client: Dataleon) -> None:
         with client.companies.documents.with_streaming_response.upload(
             company_id="company_id",
-            document_type="bank_statements",
+            document_type="liasse_fiscale",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -113,7 +113,7 @@ class TestDocuments:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `company_id` but received ''"):
             client.companies.documents.with_raw_response.upload(
                 company_id="",
-                document_type="bank_statements",
+                document_type="liasse_fiscale",
             )
 
 
@@ -169,7 +169,7 @@ class TestAsyncDocuments:
     async def test_method_upload(self, async_client: AsyncDataleon) -> None:
         document = await async_client.companies.documents.upload(
             company_id="company_id",
-            document_type="bank_statements",
+            document_type="liasse_fiscale",
         )
         assert_matches_type(GenericDocument, document, path=["response"])
 
@@ -178,7 +178,7 @@ class TestAsyncDocuments:
     async def test_method_upload_with_all_params(self, async_client: AsyncDataleon) -> None:
         document = await async_client.companies.documents.upload(
             company_id="company_id",
-            document_type="bank_statements",
+            document_type="liasse_fiscale",
             file=b"raw file contents",
             url="https://example.com/sample.pdf",
         )
@@ -189,7 +189,7 @@ class TestAsyncDocuments:
     async def test_raw_response_upload(self, async_client: AsyncDataleon) -> None:
         response = await async_client.companies.documents.with_raw_response.upload(
             company_id="company_id",
-            document_type="bank_statements",
+            document_type="liasse_fiscale",
         )
 
         assert response.is_closed is True
@@ -202,7 +202,7 @@ class TestAsyncDocuments:
     async def test_streaming_response_upload(self, async_client: AsyncDataleon) -> None:
         async with async_client.companies.documents.with_streaming_response.upload(
             company_id="company_id",
-            document_type="bank_statements",
+            document_type="liasse_fiscale",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -218,5 +218,5 @@ class TestAsyncDocuments:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `company_id` but received ''"):
             await async_client.companies.documents.with_raw_response.upload(
                 company_id="",
-                document_type="bank_statements",
+                document_type="liasse_fiscale",
             )

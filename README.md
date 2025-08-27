@@ -139,7 +139,7 @@ client = Dataleon()
 
 client.individuals.documents.upload(
     individual_id="individual_id",
-    document_type="bank_statements",
+    document_type="liasse_fiscale",
     file=Path("/path/to/file"),
 )
 ```
