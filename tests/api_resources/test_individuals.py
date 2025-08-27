@@ -21,7 +21,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestIndividuals:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create(self, client: Dataleon) -> None:
         individual = client.individuals.create(
@@ -29,7 +29,7 @@ class TestIndividuals:
         )
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: Dataleon) -> None:
         individual = client.individuals.create(
@@ -45,6 +45,7 @@ class TestIndividuals:
             },
             source_id="ID54410069066",
             technical_data={
+                "active_aml_suspicions": False,
                 "callback_url": "https://example.com/callback",
                 "callback_url_notification": "https://example.com/notify",
                 "language": "fra",
@@ -53,7 +54,7 @@ class TestIndividuals:
         )
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: Dataleon) -> None:
         response = client.individuals.with_raw_response.create(
@@ -65,7 +66,7 @@ class TestIndividuals:
         individual = response.parse()
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: Dataleon) -> None:
         with client.individuals.with_streaming_response.create(
@@ -79,7 +80,7 @@ class TestIndividuals:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: Dataleon) -> None:
         individual = client.individuals.retrieve(
@@ -87,7 +88,7 @@ class TestIndividuals:
         )
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_retrieve_with_all_params(self, client: Dataleon) -> None:
         individual = client.individuals.retrieve(
@@ -97,7 +98,7 @@ class TestIndividuals:
         )
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: Dataleon) -> None:
         response = client.individuals.with_raw_response.retrieve(
@@ -109,7 +110,7 @@ class TestIndividuals:
         individual = response.parse()
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: Dataleon) -> None:
         with client.individuals.with_streaming_response.retrieve(
@@ -123,7 +124,7 @@ class TestIndividuals:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: Dataleon) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `individual_id` but received ''"):
@@ -131,7 +132,7 @@ class TestIndividuals:
                 individual_id="",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_update(self, client: Dataleon) -> None:
         individual = client.individuals.update(
@@ -140,7 +141,7 @@ class TestIndividuals:
         )
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_update_with_all_params(self, client: Dataleon) -> None:
         individual = client.individuals.update(
@@ -157,6 +158,7 @@ class TestIndividuals:
             },
             source_id="ID54410069066",
             technical_data={
+                "active_aml_suspicions": False,
                 "callback_url": "https://example.com/callback",
                 "callback_url_notification": "https://example.com/notify",
                 "language": "fra",
@@ -165,7 +167,7 @@ class TestIndividuals:
         )
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_update(self, client: Dataleon) -> None:
         response = client.individuals.with_raw_response.update(
@@ -178,7 +180,7 @@ class TestIndividuals:
         individual = response.parse()
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_update(self, client: Dataleon) -> None:
         with client.individuals.with_streaming_response.update(
@@ -193,7 +195,7 @@ class TestIndividuals:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_update(self, client: Dataleon) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `individual_id` but received ''"):
@@ -202,13 +204,13 @@ class TestIndividuals:
                 workspace_id="wk_123",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_list(self, client: Dataleon) -> None:
         individual = client.individuals.list()
         assert_matches_type(IndividualListResponse, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_list_with_all_params(self, client: Dataleon) -> None:
         individual = client.individuals.list(
@@ -223,7 +225,7 @@ class TestIndividuals:
         )
         assert_matches_type(IndividualListResponse, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_list(self, client: Dataleon) -> None:
         response = client.individuals.with_raw_response.list()
@@ -233,7 +235,7 @@ class TestIndividuals:
         individual = response.parse()
         assert_matches_type(IndividualListResponse, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_list(self, client: Dataleon) -> None:
         with client.individuals.with_streaming_response.list() as response:
@@ -245,7 +247,7 @@ class TestIndividuals:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_delete(self, client: Dataleon) -> None:
         individual = client.individuals.delete(
@@ -253,7 +255,7 @@ class TestIndividuals:
         )
         assert individual is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: Dataleon) -> None:
         response = client.individuals.with_raw_response.delete(
@@ -265,7 +267,7 @@ class TestIndividuals:
         individual = response.parse()
         assert individual is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: Dataleon) -> None:
         with client.individuals.with_streaming_response.delete(
@@ -279,7 +281,7 @@ class TestIndividuals:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_path_params_delete(self, client: Dataleon) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `individual_id` but received ''"):
@@ -293,7 +295,7 @@ class TestAsyncIndividuals:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncDataleon) -> None:
         individual = await async_client.individuals.create(
@@ -301,7 +303,7 @@ class TestAsyncIndividuals:
         )
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncDataleon) -> None:
         individual = await async_client.individuals.create(
@@ -317,6 +319,7 @@ class TestAsyncIndividuals:
             },
             source_id="ID54410069066",
             technical_data={
+                "active_aml_suspicions": False,
                 "callback_url": "https://example.com/callback",
                 "callback_url_notification": "https://example.com/notify",
                 "language": "fra",
@@ -325,7 +328,7 @@ class TestAsyncIndividuals:
         )
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncDataleon) -> None:
         response = await async_client.individuals.with_raw_response.create(
@@ -337,7 +340,7 @@ class TestAsyncIndividuals:
         individual = await response.parse()
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncDataleon) -> None:
         async with async_client.individuals.with_streaming_response.create(
@@ -351,7 +354,7 @@ class TestAsyncIndividuals:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncDataleon) -> None:
         individual = await async_client.individuals.retrieve(
@@ -359,7 +362,7 @@ class TestAsyncIndividuals:
         )
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_retrieve_with_all_params(self, async_client: AsyncDataleon) -> None:
         individual = await async_client.individuals.retrieve(
@@ -369,7 +372,7 @@ class TestAsyncIndividuals:
         )
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncDataleon) -> None:
         response = await async_client.individuals.with_raw_response.retrieve(
@@ -381,7 +384,7 @@ class TestAsyncIndividuals:
         individual = await response.parse()
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncDataleon) -> None:
         async with async_client.individuals.with_streaming_response.retrieve(
@@ -395,7 +398,7 @@ class TestAsyncIndividuals:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncDataleon) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `individual_id` but received ''"):
@@ -403,7 +406,7 @@ class TestAsyncIndividuals:
                 individual_id="",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_update(self, async_client: AsyncDataleon) -> None:
         individual = await async_client.individuals.update(
@@ -412,7 +415,7 @@ class TestAsyncIndividuals:
         )
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_update_with_all_params(self, async_client: AsyncDataleon) -> None:
         individual = await async_client.individuals.update(
@@ -429,6 +432,7 @@ class TestAsyncIndividuals:
             },
             source_id="ID54410069066",
             technical_data={
+                "active_aml_suspicions": False,
                 "callback_url": "https://example.com/callback",
                 "callback_url_notification": "https://example.com/notify",
                 "language": "fra",
@@ -437,7 +441,7 @@ class TestAsyncIndividuals:
         )
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncDataleon) -> None:
         response = await async_client.individuals.with_raw_response.update(
@@ -450,7 +454,7 @@ class TestAsyncIndividuals:
         individual = await response.parse()
         assert_matches_type(Individual, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncDataleon) -> None:
         async with async_client.individuals.with_streaming_response.update(
@@ -465,7 +469,7 @@ class TestAsyncIndividuals:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_update(self, async_client: AsyncDataleon) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `individual_id` but received ''"):
@@ -474,13 +478,13 @@ class TestAsyncIndividuals:
                 workspace_id="wk_123",
             )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_list(self, async_client: AsyncDataleon) -> None:
         individual = await async_client.individuals.list()
         assert_matches_type(IndividualListResponse, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_list_with_all_params(self, async_client: AsyncDataleon) -> None:
         individual = await async_client.individuals.list(
@@ -495,7 +499,7 @@ class TestAsyncIndividuals:
         )
         assert_matches_type(IndividualListResponse, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncDataleon) -> None:
         response = await async_client.individuals.with_raw_response.list()
@@ -505,7 +509,7 @@ class TestAsyncIndividuals:
         individual = await response.parse()
         assert_matches_type(IndividualListResponse, individual, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncDataleon) -> None:
         async with async_client.individuals.with_streaming_response.list() as response:
@@ -517,7 +521,7 @@ class TestAsyncIndividuals:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncDataleon) -> None:
         individual = await async_client.individuals.delete(
@@ -525,7 +529,7 @@ class TestAsyncIndividuals:
         )
         assert individual is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncDataleon) -> None:
         response = await async_client.individuals.with_raw_response.delete(
@@ -537,7 +541,7 @@ class TestAsyncIndividuals:
         individual = await response.parse()
         assert individual is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncDataleon) -> None:
         async with async_client.individuals.with_streaming_response.delete(
@@ -551,7 +555,7 @@ class TestAsyncIndividuals:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_path_params_delete(self, async_client: AsyncDataleon) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `individual_id` but received ''"):

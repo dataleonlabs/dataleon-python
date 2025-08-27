@@ -25,7 +25,7 @@ Methods:
 Types:
 
 ```python
-from dataleon.types.individuals import DocumentResponse, GenericDocument
+from dataleon.types.individuals import DocumentResponse, GenericDocument, Kbis
 ```
 
 Methods:

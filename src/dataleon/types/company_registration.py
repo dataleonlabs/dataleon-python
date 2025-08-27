@@ -27,8 +27,11 @@ class AmlSuspicion(BaseModel):
     caption: Optional[str] = None
     """Human-readable description or title for the suspicious finding."""
 
-    checked: Optional[bool] = None
-    """Indicates whether this suspicion has been manually reviewed or confirmed."""
+    country: Optional[str] = None
+    """Country associated with the suspicion (ISO 3166-1 alpha-2 code)."""
+
+    gender: Optional[str] = None
+    """Gender associated with the suspicion, if applicable."""
 
     relation: Optional[str] = None
     """
@@ -40,16 +43,21 @@ class AmlSuspicion(BaseModel):
     """Version of the evaluation schema or rule engine used."""
 
     score: Optional[float] = None
-    """Risk score between 0.0 and 1.0 indicating the severity of the suspicion."""
+    """Risk score between 0.0 and 1 indicating the severity of the suspicion."""
 
     source: Optional[str] = None
-    """URL identifying the source system or service providing this suspicion."""
+    """Source system or service providing this suspicion."""
 
-    type: Optional[Literal["Watchlist", "PEP", "Sanctions", "RiskyEntity", "Crime"]] = None
-    """Watchlist category associated with the suspicion.
+    status: Optional[Literal["true_positive", "false_positive", "pending"]] = None
+    """Status of the suspicion review process.
 
-    Possible values include Watchlist types like "PEP", "Sanctions", "RiskyEntity",
-    or "Crime".
+    Possible values: "true_positive", "false_positive", "pending".
+    """
+
+    type: Optional[Literal["crime", "sanction", "pep", "adverse_news", "other"]] = None
+    """Category of the suspicion.
+
+    Possible values: "crime", "sanction", "pep", "adverse_news", "other".
     """
 
 
@@ -85,6 +93,9 @@ class Company(BaseModel):
     address: Optional[str] = None
     """Full registered address of the company."""
 
+    closure_date: Optional[date] = None
+    """Closure date of the company, if applicable."""
+
     commercial_name: Optional[str] = None
     """Trade or commercial name of the company."""
 
@@ -99,8 +110,17 @@ class Company(BaseModel):
     email: Optional[str] = None
     """Contact email address for the company."""
 
+    employees: Optional[int] = None
+    """Number of employees in the company."""
+
     employer_identification_number: Optional[str] = None
     """Employer Identification Number (EIN) or equivalent."""
+
+    insolvency_exists: Optional[bool] = None
+    """Indicates whether an insolvency procedure exists for the company."""
+
+    insolvency_ongoing: Optional[bool] = None
+    """Indicates whether an insolvency procedure is ongoing for the company."""
 
     legal_form: Optional[str] = None
     """Legal form or structure of the company (e.g., LLC, SARL)."""
@@ -270,6 +290,12 @@ class Risk(BaseModel):
 
 
 class TechnicalData(BaseModel):
+    active_aml_suspicions: Optional[bool] = None
+    """
+    Flag indicating whether there are active research AML (Anti-Money Laundering)
+    suspicions for the object when you apply for a new entry or get an existing one.
+    """
+
     api_version: Optional[int] = None
     """Version number of the API used."""
 
@@ -317,6 +343,9 @@ class TechnicalData(BaseModel):
 
     rejected_at: Optional[datetime] = None
     """Timestamp when the request or process was rejected; null if not rejected."""
+
+    session_duration: Optional[int] = None
+    """Duration of the user session in seconds."""
 
     started_at: Optional[datetime] = None
     """Timestamp when the process started."""
