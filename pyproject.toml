@@ -1,5 +1,5 @@
 [project]
-name = "dataleon-sdk"
+name = "dataleon"
 version = "0.1.0-alpha.1"
 description = "The official Python library for the dataleon API"
 dynamic = ["readme"]
