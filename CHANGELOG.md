@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.3 (2025-08-30)
+
+Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
+
+### Chores
+
+* **internal:** add Sequence related utils ([6c5b46a](https://github.com/dataleonlabs/dataleon-python/commit/6c5b46a0d05188191626dd2887c52697944715d6))
+
 ## 0.1.0-alpha.2 (2025-08-27)
 
 Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
