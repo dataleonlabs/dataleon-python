@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-alpha.3 (2025-09-06)
+
+Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
+
+### Features
+
+* improve future compat with pydantic v3 ([30807f3](https://github.com/dataleonlabs/dataleon-python/commit/30807f30670da75cef8c342c19e355f15adc165f))
+* **types:** replace List[str] with SequenceNotStr in params ([b73bbd4](https://github.com/dataleonlabs/dataleon-python/commit/b73bbd4c876fc07eeb5e0c19db5a7d8bbcded4b4))
+
+
+### Chores
+
+* **internal:** add Sequence related utils ([6c5b46a](https://github.com/dataleonlabs/dataleon-python/commit/6c5b46a0d05188191626dd2887c52697944715d6))
+* **internal:** move mypy configurations to `pyproject.toml` file ([9dd6b45](https://github.com/dataleonlabs/dataleon-python/commit/9dd6b45269b8a5d01ad61bfb73bd492c3c31c75c))
+* **tests:** simplify `get_platform` test ([3cfdd7f](https://github.com/dataleonlabs/dataleon-python/commit/3cfdd7f302450237efa48f99d495d3bafc82bbf0))
+
 ## 0.1.0-alpha.2 (2025-08-27)
 
 Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
