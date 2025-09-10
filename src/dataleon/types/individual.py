@@ -144,6 +144,9 @@ class Person(BaseModel):
     maiden_name: Optional[str] = None
     """Maiden name of the person, if applicable."""
 
+    nationality: Optional[str] = None
+    """Nationality of the individual (ISO 3166-1 alpha-3 country code)."""
+
     phone_number: Optional[str] = None
     """Contact phone number including country code."""
 
@@ -211,6 +214,9 @@ class TechnicalData(BaseModel):
 
     export_type: Optional[str] = None
     """Export format defined by the API (e.g., "json", "xml")."""
+
+    filtering_score_aml_suspicions: Optional[float] = None
+    """Minimum filtering score (between 0 and 1) for AML suspicions to be considered."""
 
     finished_at: Optional[datetime] = None
     """Timestamp when the process finished."""
