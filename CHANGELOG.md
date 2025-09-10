@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.4 (2025-09-10)
+
+Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
+
+### Features
+
+* **api:** api update ([31746e1](https://github.com/dataleonlabs/dataleon-python/commit/31746e1b0fcbab12448d9b3780e9481c751a4b3b))
+
 ## 0.1.0-alpha.3 (2025-09-06)
 
 Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
