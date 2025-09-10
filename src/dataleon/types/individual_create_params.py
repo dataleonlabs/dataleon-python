@@ -43,6 +43,9 @@ class Person(TypedDict, total=False):
     maiden_name: str
     """Maiden name, if applicable."""
 
+    nationality: str
+    """Nationality of the individual (ISO 3166-1 alpha-3 country code)."""
+
     phone_number: str
     """Phone number of the individual."""
 
@@ -60,6 +63,9 @@ class TechnicalData(TypedDict, total=False):
 
     callback_url_notification: str
     """URL for receive notifications about the processing state or status."""
+
+    filtering_score_aml_suspicions: float
+    """Minimum filtering score (between 0 and 1) for AML suspicions to be considered."""
 
     language: str
     """Preferred language for communication (e.g., "eng", "fra")."""
