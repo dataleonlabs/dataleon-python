@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.0-alpha.5 (2025-09-20)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Chores
+
+* do not install brew dependencies in ./scripts/bootstrap by default ([6a205a7](https://github.com/dataleonlabs/dataleon-python/commit/6a205a725a4ab48a90c8b4a54ef68d3d3e85b068))
+* **internal:** update pydantic dependency ([59a4c39](https://github.com/dataleonlabs/dataleon-python/commit/59a4c398f569e19bda1dabb3ea4b4e5e5d2a5bc1))
+* **types:** change optional parameter type from NotGiven to Omit ([70511ef](https://github.com/dataleonlabs/dataleon-python/commit/70511ef335ba875c0e03677349c44ab7a2609989))
+
 ## 0.1.0-alpha.4 (2025-09-10)
 
 Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)

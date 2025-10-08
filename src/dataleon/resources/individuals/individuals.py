@@ -14,7 +14,7 @@ from ...types import (
     individual_update_params,
     individual_retrieve_params,
 )
-from ..._types import NOT_GIVEN, Body, Query, Headers, NoneType, NotGiven
+from ..._types import Body, Omit, Query, Headers, NoneType, NotGiven, omit, not_given
 from ..._utils import maybe_transform, async_maybe_transform
 from ..._compat import cached_property
 from .documents import (
@@ -67,15 +67,15 @@ class IndividualsResource(SyncAPIResource):
         self,
         *,
         workspace_id: str,
-        person: individual_create_params.Person | NotGiven = NOT_GIVEN,
-        source_id: str | NotGiven = NOT_GIVEN,
-        technical_data: individual_create_params.TechnicalData | NotGiven = NOT_GIVEN,
+        person: individual_create_params.Person | Omit = omit,
+        source_id: str | Omit = omit,
+        technical_data: individual_create_params.TechnicalData | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Individual:
         """
         Create a new individual
@@ -119,14 +119,14 @@ class IndividualsResource(SyncAPIResource):
         self,
         individual_id: str,
         *,
-        document: bool | NotGiven = NOT_GIVEN,
-        scope: str | NotGiven = NOT_GIVEN,
+        document: bool | Omit = omit,
+        scope: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Individual:
         """
         Get an individual by ID
@@ -169,15 +169,15 @@ class IndividualsResource(SyncAPIResource):
         individual_id: str,
         *,
         workspace_id: str,
-        person: individual_update_params.Person | NotGiven = NOT_GIVEN,
-        source_id: str | NotGiven = NOT_GIVEN,
-        technical_data: individual_update_params.TechnicalData | NotGiven = NOT_GIVEN,
+        person: individual_update_params.Person | Omit = omit,
+        source_id: str | Omit = omit,
+        technical_data: individual_update_params.TechnicalData | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Individual:
         """
         Update an individual by ID
@@ -222,21 +222,21 @@ class IndividualsResource(SyncAPIResource):
     def list(
         self,
         *,
-        end_date: Union[str, date] | NotGiven = NOT_GIVEN,
-        limit: int | NotGiven = NOT_GIVEN,
-        offset: int | NotGiven = NOT_GIVEN,
-        source_id: str | NotGiven = NOT_GIVEN,
-        start_date: Union[str, date] | NotGiven = NOT_GIVEN,
+        end_date: Union[str, date] | Omit = omit,
+        limit: int | Omit = omit,
+        offset: int | Omit = omit,
+        source_id: str | Omit = omit,
+        start_date: Union[str, date] | Omit = omit,
         state: Literal["VOID", "WAITING", "STARTED", "RUNNING", "PROCESSED", "FAILED", "ABORTED", "EXPIRED", "DELETED"]
-        | NotGiven = NOT_GIVEN,
-        status: Literal["rejected", "need_review", "approved"] | NotGiven = NOT_GIVEN,
-        workspace_id: str | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        status: Literal["rejected", "need_review", "approved"] | Omit = omit,
+        workspace_id: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> IndividualListResponse:
         """
         Get all individuals
@@ -299,7 +299,7 @@ class IndividualsResource(SyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> None:
         """
         Delete an individual by ID
@@ -353,15 +353,15 @@ class AsyncIndividualsResource(AsyncAPIResource):
         self,
         *,
         workspace_id: str,
-        person: individual_create_params.Person | NotGiven = NOT_GIVEN,
-        source_id: str | NotGiven = NOT_GIVEN,
-        technical_data: individual_create_params.TechnicalData | NotGiven = NOT_GIVEN,
+        person: individual_create_params.Person | Omit = omit,
+        source_id: str | Omit = omit,
+        technical_data: individual_create_params.TechnicalData | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Individual:
         """
         Create a new individual
@@ -405,14 +405,14 @@ class AsyncIndividualsResource(AsyncAPIResource):
         self,
         individual_id: str,
         *,
-        document: bool | NotGiven = NOT_GIVEN,
-        scope: str | NotGiven = NOT_GIVEN,
+        document: bool | Omit = omit,
+        scope: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Individual:
         """
         Get an individual by ID
@@ -455,15 +455,15 @@ class AsyncIndividualsResource(AsyncAPIResource):
         individual_id: str,
         *,
         workspace_id: str,
-        person: individual_update_params.Person | NotGiven = NOT_GIVEN,
-        source_id: str | NotGiven = NOT_GIVEN,
-        technical_data: individual_update_params.TechnicalData | NotGiven = NOT_GIVEN,
+        person: individual_update_params.Person | Omit = omit,
+        source_id: str | Omit = omit,
+        technical_data: individual_update_params.TechnicalData | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> Individual:
         """
         Update an individual by ID
@@ -508,21 +508,21 @@ class AsyncIndividualsResource(AsyncAPIResource):
     async def list(
         self,
         *,
-        end_date: Union[str, date] | NotGiven = NOT_GIVEN,
-        limit: int | NotGiven = NOT_GIVEN,
-        offset: int | NotGiven = NOT_GIVEN,
-        source_id: str | NotGiven = NOT_GIVEN,
-        start_date: Union[str, date] | NotGiven = NOT_GIVEN,
+        end_date: Union[str, date] | Omit = omit,
+        limit: int | Omit = omit,
+        offset: int | Omit = omit,
+        source_id: str | Omit = omit,
+        start_date: Union[str, date] | Omit = omit,
         state: Literal["VOID", "WAITING", "STARTED", "RUNNING", "PROCESSED", "FAILED", "ABORTED", "EXPIRED", "DELETED"]
-        | NotGiven = NOT_GIVEN,
-        status: Literal["rejected", "need_review", "approved"] | NotGiven = NOT_GIVEN,
-        workspace_id: str | NotGiven = NOT_GIVEN,
+        | Omit = omit,
+        status: Literal["rejected", "need_review", "approved"] | Omit = omit,
+        workspace_id: str | Omit = omit,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> IndividualListResponse:
         """
         Get all individuals
@@ -585,7 +585,7 @@ class AsyncIndividualsResource(AsyncAPIResource):
         extra_headers: Headers | None = None,
         extra_query: Query | None = None,
         extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
     ) -> None:
         """
         Delete an individual by ID
