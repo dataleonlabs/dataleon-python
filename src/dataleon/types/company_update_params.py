@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from typing_extensions import Required, TypedDict
+from typing import List
+from typing_extensions import Literal, Required, TypedDict
 
 __all__ = ["CompanyUpdateParams", "Company", "TechnicalData"]
 
@@ -92,6 +93,9 @@ class TechnicalData(TypedDict, total=False):
 
     language: str
     """Preferred language for responses or notifications (e.g., "eng", "fra")."""
+
+    portal_steps: List[Literal["identity_verification", "document_signing", "proof_of_address", "selfie", "face_match"]]
+    """List of steps to include in the portal workflow."""
 
     raw_data: bool
     """Flag indicating whether to include raw data in the response."""
