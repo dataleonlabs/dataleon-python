@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.6 (2025-10-14)
+
+Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
+
+### Features
+
+* **api:** api update ([5e6943f](https://github.com/dataleonlabs/dataleon-python/commit/5e6943fc5724b9bf19cb8958b6d06f4b0abefcaf))
+
+
+### Chores
+
+* **internal:** detect missing future annotations with ruff ([7ed7019](https://github.com/dataleonlabs/dataleon-python/commit/7ed7019f18938d0b0ac99c18478696bb352dfd63))
+
 ## 0.1.0-alpha.5 (2025-09-20)
 
 Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
