@@ -236,6 +236,11 @@ class TechnicalData(BaseModel):
     notification_confirmation: Optional[bool] = None
     """Flag indicating if notification confirmation is required or received."""
 
+    portal_steps: Optional[
+        List[Literal["identity_verification", "document_signing", "proof_of_address", "selfie", "face_match"]]
+    ] = None
+    """List of steps to include in the portal workflow."""
+
     qr_code: Optional[str] = None
     """Indicates whether QR code is enabled ("true" or "false")."""
 
