@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.7 (2025-10-30)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Bug Fixes
+
+* **client:** close streams without requiring full consumption ([48f0100](https://github.com/dataleonlabs/dataleon-python/commit/48f01007da66b137cb540a577b77cb99839c0f14))
+
+
+### Chores
+
+* bump `httpx-aiohttp` version to 0.1.9 ([a2d5e8b](https://github.com/dataleonlabs/dataleon-python/commit/a2d5e8b6e27e5b3f2bf3815ee9dbe0e5b68afc93))
+
 ## 0.1.0-alpha.6 (2025-10-14)
 
 Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
