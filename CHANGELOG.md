@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.8 (2025-10-31)
+
+Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
+
+### Chores
+
+* **internal/tests:** avoid race condition with implicit client cleanup ([16a7270](https://github.com/dataleonlabs/dataleon-python/commit/16a72708bc147c733854ad05e62d5225f79290bd))
+
 ## 0.1.0-alpha.7 (2025-10-30)
 
 Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
