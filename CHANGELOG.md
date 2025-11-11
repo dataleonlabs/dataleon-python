@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.8 (2025-11-11)
+
+Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
+
+### Bug Fixes
+
+* compat with Python 3.14 ([87a4a57](https://github.com/dataleonlabs/dataleon-python/commit/87a4a579ec5d3933a87a7d3c4b94ba97191aa5b8))
+
+
+### Chores
+
+* **internal/tests:** avoid race condition with implicit client cleanup ([16a7270](https://github.com/dataleonlabs/dataleon-python/commit/16a72708bc147c733854ad05e62d5225f79290bd))
+* **internal:** grammar fix (it's -&gt; its) ([0d337f6](https://github.com/dataleonlabs/dataleon-python/commit/0d337f6a8784093bf9fde3c7136ad94d55e315d9))
+* **package:** drop Python 3.8 support ([8ba1eb6](https://github.com/dataleonlabs/dataleon-python/commit/8ba1eb66b3335afc842a7036cac2116d7b699945))
+
 ## 0.1.0-alpha.7 (2025-10-30)
 
 Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
