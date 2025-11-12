@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.9 (2025-11-12)
+
+Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
+
+### Bug Fixes
+
+* **compat:** update signatures of `model_dump` and `model_dump_json` for Pydantic v1 ([1d2221f](https://github.com/dataleonlabs/dataleon-python/commit/1d2221f6788945490997f0eea15615905fef86f9))
+
 ## 0.1.0-alpha.8 (2025-11-11)
 
 Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
