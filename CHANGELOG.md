@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.10 (2025-11-22)
+
+Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
+
+### Chores
+
+* add Python 3.14 classifier and testing ([0991740](https://github.com/dataleonlabs/dataleon-python/commit/09917407984dd689b1cb7f027ec4737b7f84ff47))
+
 ## 0.1.0-alpha.9 (2025-11-12)
 
 Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
