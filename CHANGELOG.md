@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.10 (2025-11-28)
+
+Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
+
+### Bug Fixes
+
+* ensure streams are always closed ([0d8605e](https://github.com/dataleonlabs/dataleon-python/commit/0d8605e54f9acc005818c650d64b543b083f33e8))
+
+
+### Chores
+
+* add Python 3.14 classifier and testing ([0991740](https://github.com/dataleonlabs/dataleon-python/commit/09917407984dd689b1cb7f027ec4737b7f84ff47))
+* **deps:** mypy 1.18.1 has a regression, pin to 1.17 ([2b2f28d](https://github.com/dataleonlabs/dataleon-python/commit/2b2f28dafd71092b613593bab16e9902c404ef87))
+
 ## 0.1.0-alpha.9 (2025-11-12)
 
 Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
