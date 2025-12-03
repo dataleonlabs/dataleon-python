@@ -83,6 +83,7 @@ pip install --pre dataleon[aiohttp]
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
 
 ```python
+import os
 import asyncio
 from dataleon import DefaultAioHttpClient
 from dataleon import AsyncDataleon
@@ -90,7 +91,7 @@ from dataleon import AsyncDataleon
 
 async def main() -> None:
     async with AsyncDataleon(
-        api_key="My API Key",
+        api_key=os.environ.get("DATALEON_API_KEY"),  # This is the default and can be omitted
         http_client=DefaultAioHttpClient(),
     ) as client:
         individual = await client.individuals.create(

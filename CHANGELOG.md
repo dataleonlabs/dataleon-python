@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.11 (2025-12-03)
+
+Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)
+
+### Chores
+
+* **docs:** use environment variables for authentication in code snippets ([1d81c65](https://github.com/dataleonlabs/dataleon-python/commit/1d81c65da902441733d48cb5fe0d7025cdf4c64e))
+* update lockfile ([a997c5c](https://github.com/dataleonlabs/dataleon-python/commit/a997c5cb97edd53c92343e375157362eeaa790b6))
+
 ## 0.1.0-alpha.10 (2025-11-28)
 
 Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
