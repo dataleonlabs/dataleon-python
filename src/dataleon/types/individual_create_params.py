@@ -26,6 +26,8 @@ class IndividualCreateParams(TypedDict, total=False):
 
 
 class Person(TypedDict, total=False):
+    """Personal information about the individual."""
+
     birthday: str
     """Date of birth in DD/MM/YYYY format."""
 
@@ -52,6 +54,8 @@ class Person(TypedDict, total=False):
 
 
 class TechnicalData(TypedDict, total=False):
+    """Technical metadata related to the request or processing."""
+
     active_aml_suspicions: bool
     """
     Flag indicating whether there are active research AML (Anti-Money Laundering)

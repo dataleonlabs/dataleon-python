@@ -24,6 +24,10 @@ __all__ = [
 
 
 class AmlSuspicion(BaseModel):
+    """
+    Represents a record of suspicion raised during Anti-Money Laundering (AML) screening. Includes metadata such as risk score, origin, and linked watchlist types.
+    """
+
     caption: Optional[str] = None
     """Human-readable description or title for the suspicious finding."""
 
@@ -62,6 +66,8 @@ class AmlSuspicion(BaseModel):
 
 
 class Certificat(BaseModel):
+    """Digital certificate associated with the individual, if any."""
+
     id: Optional[str] = None
     """Unique identifier for the certificate."""
 
@@ -73,6 +79,8 @@ class Certificat(BaseModel):
 
 
 class IdentityCard(BaseModel):
+    """Reference to the individual's identity document."""
+
     id: Optional[str] = None
     """Unique identifier for the document."""
 
@@ -120,6 +128,10 @@ class IdentityCard(BaseModel):
 
 
 class Person(BaseModel):
+    """
+    Personal details of the individual, such as name, date of birth, and contact info.
+    """
+
     birthday: Optional[str] = None
     """Date of birth, formatted as DD/MM/YYYY."""
 
@@ -152,6 +164,8 @@ class Person(BaseModel):
 
 
 class Property(BaseModel):
+    """Represents a generic property key-value pair with a specified type."""
+
     name: Optional[str] = None
     """Name/key of the property."""
 
@@ -163,6 +177,8 @@ class Property(BaseModel):
 
 
 class Risk(BaseModel):
+    """Risk assessment associated with the individual."""
+
     code: Optional[str] = None
     """Risk category or code identifier."""
 
@@ -174,6 +190,10 @@ class Risk(BaseModel):
 
 
 class Tag(BaseModel):
+    """
+    Represents a key-value metadata tag that can be associated with entities such as individuals or companies.
+    """
+
     key: Optional[str] = None
     """Name of the tag used to identify the metadata field."""
 
@@ -188,6 +208,8 @@ class Tag(BaseModel):
 
 
 class TechnicalData(BaseModel):
+    """Technical metadata related to the request (e.g., QR code settings, language)."""
+
     active_aml_suspicions: Optional[bool] = None
     """
     Flag indicating whether there are active research AML (Anti-Money Laundering)
@@ -264,6 +286,10 @@ class TechnicalData(BaseModel):
 
 
 class Individual(BaseModel):
+    """
+    Represents a single individual record, including identification, status, and associated metadata.
+    """
+
     id: Optional[str] = None
     """Unique identifier of the individual."""
 

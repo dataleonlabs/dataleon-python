@@ -24,6 +24,10 @@ __all__ = [
 
 
 class AmlSuspicion(BaseModel):
+    """
+    Represents a record of suspicion raised during Anti-Money Laundering (AML) screening. Includes metadata such as risk score, origin, and linked watchlist types.
+    """
+
     caption: Optional[str] = None
     """Human-readable description or title for the suspicious finding."""
 
@@ -62,6 +66,10 @@ class AmlSuspicion(BaseModel):
 
 
 class Certificat(BaseModel):
+    """
+    Digital certificate associated with the company, if any, including its creation timestamp and filename.
+    """
+
     id: Optional[str] = None
     """Unique identifier for the certificate."""
 
@@ -73,6 +81,10 @@ class Certificat(BaseModel):
 
 
 class CompanyContact(BaseModel):
+    """
+    Contact information for the company, including email, phone number, and address.
+    """
+
     department: Optional[str] = None
     """Department of the contact person."""
 
@@ -90,6 +102,10 @@ class CompanyContact(BaseModel):
 
 
 class Company(BaseModel):
+    """
+    Main information about the company being registered, including legal name, registration ID, and address.
+    """
+
     address: Optional[str] = None
     """Full registered address of the company."""
 
@@ -154,6 +170,10 @@ class Company(BaseModel):
 
 
 class Member(BaseModel):
+    """
+    Represents a member or actor of a company, including personal and ownership information.
+    """
+
     id: Optional[str] = None
 
     address: Optional[str] = None
@@ -268,6 +288,8 @@ class Member(BaseModel):
 
 
 class Property(BaseModel):
+    """Represents a generic property key-value pair with a specified type."""
+
     name: Optional[str] = None
     """Name/key of the property."""
 
@@ -279,6 +301,10 @@ class Property(BaseModel):
 
 
 class Risk(BaseModel):
+    """
+    Risk assessment associated with the company, including a risk code, reason, and confidence score.
+    """
+
     code: Optional[str] = None
     """Risk category or code identifier."""
 
@@ -290,6 +316,10 @@ class Risk(BaseModel):
 
 
 class TechnicalData(BaseModel):
+    """
+    Technical metadata related to the request, such as IP address, QR code settings, and callback URLs.
+    """
+
     active_aml_suspicions: Optional[bool] = None
     """
     Flag indicating whether there are active research AML (Anti-Money Laundering)

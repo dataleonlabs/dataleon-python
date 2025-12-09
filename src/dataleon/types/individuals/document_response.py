@@ -8,6 +8,10 @@ __all__ = ["DocumentResponse", "Document"]
 
 
 class Document(BaseModel):
+    """
+    Represents a document stored and processed by the system, such as an identity card or a PDF contract.
+    """
+
     id: Optional[str] = None
     """Unique identifier of the document."""
 
