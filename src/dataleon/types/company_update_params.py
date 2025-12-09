@@ -26,6 +26,8 @@ class CompanyUpdateParams(TypedDict, total=False):
 
 
 class Company(TypedDict, total=False):
+    """Main information about the company being registered."""
+
     name: Required[str]
     """Legal name of the company."""
 
@@ -75,6 +77,8 @@ class Company(TypedDict, total=False):
 
 
 class TechnicalData(TypedDict, total=False):
+    """Technical metadata and callback configuration."""
+
     active_aml_suspicions: bool
     """
     Flag indicating whether there are active research AML (Anti-Money Laundering)
