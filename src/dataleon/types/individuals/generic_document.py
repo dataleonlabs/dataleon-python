@@ -26,6 +26,10 @@ class Value(BaseModel):
 
 
 class GenericDocument(BaseModel):
+    """
+    Represents a general document with metadata, verification checks, and extracted data.
+    """
+
     id: Optional[str] = None
     """Unique identifier of the document."""
 

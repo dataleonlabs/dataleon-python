@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.12 (2025-12-09)
+
+Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
+
+### Chores
+
+* add missing docstrings ([368379d](https://github.com/dataleonlabs/dataleon-python/commit/368379d512e5306be7c3228dd63414b620cd4fcc))
+
 ## 0.1.0-alpha.11 (2025-12-09)
 
 Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)

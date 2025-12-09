@@ -10,6 +10,8 @@ __all__ = ["Check"]
 
 
 class Check(BaseModel):
+    """Represents a verification check result."""
+
     masked: Optional[bool] = None
     """Indicates whether the result or data is masked/hidden."""
 
