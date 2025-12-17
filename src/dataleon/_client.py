@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import os
-from typing import Any, Mapping
+from typing import TYPE_CHECKING, Any, Mapping
 from typing_extensions import Self, override
 
 import httpx
@@ -20,6 +20,7 @@ from ._types import (
     not_given,
 )
 from ._utils import is_given, get_async_library
+from ._compat import cached_property
 from ._version import __version__
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
 from ._exceptions import DataleonError, APIStatusError
@@ -28,8 +29,11 @@ from ._base_client import (
     SyncAPIClient,
     AsyncAPIClient,
 )
-from .resources.companies import companies
-from .resources.individuals import individuals
+
+if TYPE_CHECKING:
+    from .resources import companies, individuals
+    from .resources.companies.companies import CompaniesResource, AsyncCompaniesResource
+    from .resources.individuals.individuals import IndividualsResource, AsyncIndividualsResource
 
 __all__ = [
     "Timeout",
@@ -44,11 +48,6 @@ __all__ = [
 
 
 class Dataleon(SyncAPIClient):
-    individuals: individuals.IndividualsResource
-    companies: companies.CompaniesResource
-    with_raw_response: DataleonWithRawResponse
-    with_streaming_response: DataleonWithStreamedResponse
-
     # client options
     api_key: str
 
@@ -103,10 +102,25 @@ class Dataleon(SyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.individuals = individuals.IndividualsResource(self)
-        self.companies = companies.CompaniesResource(self)
-        self.with_raw_response = DataleonWithRawResponse(self)
-        self.with_streaming_response = DataleonWithStreamedResponse(self)
+    @cached_property
+    def individuals(self) -> IndividualsResource:
+        from .resources.individuals import IndividualsResource
+
+        return IndividualsResource(self)
+
+    @cached_property
+    def companies(self) -> CompaniesResource:
+        from .resources.companies import CompaniesResource
+
+        return CompaniesResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> DataleonWithRawResponse:
+        return DataleonWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> DataleonWithStreamedResponse:
+        return DataleonWithStreamedResponse(self)
 
     @property
     @override
@@ -214,11 +228,6 @@ class Dataleon(SyncAPIClient):
 
 
 class AsyncDataleon(AsyncAPIClient):
-    individuals: individuals.AsyncIndividualsResource
-    companies: companies.AsyncCompaniesResource
-    with_raw_response: AsyncDataleonWithRawResponse
-    with_streaming_response: AsyncDataleonWithStreamedResponse
-
     # client options
     api_key: str
 
@@ -273,10 +282,25 @@ class AsyncDataleon(AsyncAPIClient):
             _strict_response_validation=_strict_response_validation,
         )
 
-        self.individuals = individuals.AsyncIndividualsResource(self)
-        self.companies = companies.AsyncCompaniesResource(self)
-        self.with_raw_response = AsyncDataleonWithRawResponse(self)
-        self.with_streaming_response = AsyncDataleonWithStreamedResponse(self)
+    @cached_property
+    def individuals(self) -> AsyncIndividualsResource:
+        from .resources.individuals import AsyncIndividualsResource
+
+        return AsyncIndividualsResource(self)
+
+    @cached_property
+    def companies(self) -> AsyncCompaniesResource:
+        from .resources.companies import AsyncCompaniesResource
+
+        return AsyncCompaniesResource(self)
+
+    @cached_property
+    def with_raw_response(self) -> AsyncDataleonWithRawResponse:
+        return AsyncDataleonWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> AsyncDataleonWithStreamedResponse:
+        return AsyncDataleonWithStreamedResponse(self)
 
     @property
     @override
@@ -384,27 +408,79 @@ class AsyncDataleon(AsyncAPIClient):
 
 
 class DataleonWithRawResponse:
+    _client: Dataleon
+
     def __init__(self, client: Dataleon) -> None:
-        self.individuals = individuals.IndividualsResourceWithRawResponse(client.individuals)
-        self.companies = companies.CompaniesResourceWithRawResponse(client.companies)
+        self._client = client
+
+    @cached_property
+    def individuals(self) -> individuals.IndividualsResourceWithRawResponse:
+        from .resources.individuals import IndividualsResourceWithRawResponse
+
+        return IndividualsResourceWithRawResponse(self._client.individuals)
+
+    @cached_property
+    def companies(self) -> companies.CompaniesResourceWithRawResponse:
+        from .resources.companies import CompaniesResourceWithRawResponse
+
+        return CompaniesResourceWithRawResponse(self._client.companies)
 
 
 class AsyncDataleonWithRawResponse:
+    _client: AsyncDataleon
+
     def __init__(self, client: AsyncDataleon) -> None:
-        self.individuals = individuals.AsyncIndividualsResourceWithRawResponse(client.individuals)
-        self.companies = companies.AsyncCompaniesResourceWithRawResponse(client.companies)
+        self._client = client
+
+    @cached_property
+    def individuals(self) -> individuals.AsyncIndividualsResourceWithRawResponse:
+        from .resources.individuals import AsyncIndividualsResourceWithRawResponse
+
+        return AsyncIndividualsResourceWithRawResponse(self._client.individuals)
+
+    @cached_property
+    def companies(self) -> companies.AsyncCompaniesResourceWithRawResponse:
+        from .resources.companies import AsyncCompaniesResourceWithRawResponse
+
+        return AsyncCompaniesResourceWithRawResponse(self._client.companies)
 
 
 class DataleonWithStreamedResponse:
+    _client: Dataleon
+
     def __init__(self, client: Dataleon) -> None:
-        self.individuals = individuals.IndividualsResourceWithStreamingResponse(client.individuals)
-        self.companies = companies.CompaniesResourceWithStreamingResponse(client.companies)
+        self._client = client
+
+    @cached_property
+    def individuals(self) -> individuals.IndividualsResourceWithStreamingResponse:
+        from .resources.individuals import IndividualsResourceWithStreamingResponse
+
+        return IndividualsResourceWithStreamingResponse(self._client.individuals)
+
+    @cached_property
+    def companies(self) -> companies.CompaniesResourceWithStreamingResponse:
+        from .resources.companies import CompaniesResourceWithStreamingResponse
+
+        return CompaniesResourceWithStreamingResponse(self._client.companies)
 
 
 class AsyncDataleonWithStreamedResponse:
+    _client: AsyncDataleon
+
     def __init__(self, client: AsyncDataleon) -> None:
-        self.individuals = individuals.AsyncIndividualsResourceWithStreamingResponse(client.individuals)
-        self.companies = companies.AsyncCompaniesResourceWithStreamingResponse(client.companies)
+        self._client = client
+
+    @cached_property
+    def individuals(self) -> individuals.AsyncIndividualsResourceWithStreamingResponse:
+        from .resources.individuals import AsyncIndividualsResourceWithStreamingResponse
+
+        return AsyncIndividualsResourceWithStreamingResponse(self._client.individuals)
+
+    @cached_property
+    def companies(self) -> companies.AsyncCompaniesResourceWithStreamingResponse:
+        from .resources.companies import AsyncCompaniesResourceWithStreamingResponse
+
+        return AsyncCompaniesResourceWithStreamingResponse(self._client.companies)
 
 
 Client = Dataleon
