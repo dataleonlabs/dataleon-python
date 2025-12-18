@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.12 (2025-12-18)
+
+Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
+
+### Bug Fixes
+
+* use async_to_httpx_files in patch method ([8f8c56f](https://github.com/dataleonlabs/dataleon-python/commit/8f8c56f18bbea9edbe94c81fde6d6c347e971653))
+
+
+### Chores
+
+* add missing docstrings ([368379d](https://github.com/dataleonlabs/dataleon-python/commit/368379d512e5306be7c3228dd63414b620cd4fcc))
+* **internal:** add missing files argument to base client ([b27a58f](https://github.com/dataleonlabs/dataleon-python/commit/b27a58f286f9047ff11f66b49404334ad0688a4f))
+* speedup initial import ([5f88eed](https://github.com/dataleonlabs/dataleon-python/commit/5f88eed8cddaee1ef5d818c8139ecc3231a16881))
+
 ## 0.1.0-alpha.11 (2025-12-09)
 
 Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)
