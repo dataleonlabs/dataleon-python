@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.13 (2025-12-19)
+
+Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
+
+### Chores
+
+* **internal:** add `--fix` argument to lint script ([e5d7d96](https://github.com/dataleonlabs/dataleon-python/commit/e5d7d960decee9f7e5d14b53bba068d1957069d7))
+
 ## 0.1.0-alpha.12 (2025-12-18)
 
 Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
