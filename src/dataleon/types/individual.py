@@ -96,6 +96,9 @@ class IdentityCard(BaseModel):
     country: Optional[str] = None
     """Country code issuing the document (ISO 3166-1 alpha-2)."""
 
+    entitlement_date: Optional[str] = None
+    """Date of entitlement or validity start date, in YYYY-MM-DD format."""
+
     expiration_date: Optional[str] = None
     """Expiration date of the document, in YYYY-MM-DD format."""
 
