@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.14 (2026-01-08)
+
+Full Changelog: [v0.1.0-alpha.13...v0.1.0-alpha.14](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.13...v0.1.0-alpha.14)
+
+### Documentation
+
+* prominently feature MCP server setup in root SDK readmes ([4cefc49](https://github.com/dataleonlabs/dataleon-python/commit/4cefc490fb7b227c2a1270d54428951bd19b2c52))
+
 ## 0.1.0-alpha.13 (2026-01-05)
 
 Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
