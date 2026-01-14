@@ -26,7 +26,7 @@ The REST API documentation can be found on [docs.dataleon.ai](https://docs.datal
 
 ```sh
 # install from PyPI
-pip install --pre dataleon
+pip install '--pre dataleon'
 ```
 
 ## Usage
@@ -86,7 +86,7 @@ You can enable this by installing `aiohttp`:
 
 ```sh
 # install from PyPI
-pip install --pre dataleon[aiohttp]
+pip install '--pre dataleon[aiohttp]'
 ```
 
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
