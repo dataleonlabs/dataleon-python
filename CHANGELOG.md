@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.1.0-alpha.14 (2026-01-15)
+
+Full Changelog: [v0.1.0-alpha.13...v0.1.0-alpha.14](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.13...v0.1.0-alpha.14)
+
+### Features
+
+* **api:** api update ([e2c1d1e](https://github.com/dataleonlabs/dataleon-python/commit/e2c1d1ee1e597cbd7e6315db786ce7834197ce30))
+* **client:** add support for binary request streaming ([0f7411b](https://github.com/dataleonlabs/dataleon-python/commit/0f7411bf321bc4e01fcbc436bf15eeff1c85fd62))
+
+
+### Chores
+
+* **internal:** codegen related update ([dfc9637](https://github.com/dataleonlabs/dataleon-python/commit/dfc9637f931a14aa427d17824a1c656180b7a546))
+
+
+### Documentation
+
+* prominently feature MCP server setup in root SDK readmes ([4cefc49](https://github.com/dataleonlabs/dataleon-python/commit/4cefc490fb7b227c2a1270d54428951bd19b2c52))
+
 ## 0.1.0-alpha.13 (2026-01-05)
 
 Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
