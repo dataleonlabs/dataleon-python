@@ -20,6 +20,7 @@ class DocumentUploadParams(TypedDict, total=False):
             "registration_company_certificate",
             "kbis",
             "rib",
+            "check",
             "livret_famille",
             "birth_certificate",
             "payslip",
