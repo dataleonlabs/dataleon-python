@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.15 (2026-01-17)
+
+Full Changelog: [v0.1.0-alpha.14...v0.1.0-alpha.15](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.14...v0.1.0-alpha.15)
+
+### Chores
+
+* **internal:** update `actions/checkout` version ([5174bf3](https://github.com/dataleonlabs/dataleon-python/commit/5174bf37b6806ebbf8bae4364e40ddd7f0704f39))
+
 ## 0.1.0-alpha.14 (2026-01-15)
 
 Full Changelog: [v0.1.0-alpha.13...v0.1.0-alpha.14](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.13...v0.1.0-alpha.14)
