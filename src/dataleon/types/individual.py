@@ -225,6 +225,9 @@ class TechnicalData(BaseModel):
     approved_at: Optional[datetime] = None
     """Timestamp when the request or process was approved."""
 
+    approved_by: Optional[str] = None
+    """Identifier of the actor who approved (e.g., user id or username)."""
+
     callback_url: Optional[str] = None
     """URL to receive callback data from the AML system."""
 
@@ -258,6 +261,9 @@ class TechnicalData(BaseModel):
     need_review_at: Optional[datetime] = None
     """Timestamp indicating when the request or process needs review; null if none."""
 
+    need_review_by: Optional[str] = None
+    """Identifier of the actor who requested review (e.g., user id or username)."""
+
     notification_confirmation: Optional[bool] = None
     """Flag indicating if notification confirmation is required or received."""
 
@@ -274,6 +280,9 @@ class TechnicalData(BaseModel):
 
     rejected_at: Optional[datetime] = None
     """Timestamp when the request or process was rejected; null if not rejected."""
+
+    rejected_by: Optional[str] = None
+    """Identifier of the actor who rejected (e.g., user id or username)."""
 
     session_duration: Optional[int] = None
     """Duration of the user session in seconds."""
