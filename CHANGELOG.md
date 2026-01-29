@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.16 (2026-01-29)
+
+Full Changelog: [v0.1.0-alpha.15...v0.1.0-alpha.16](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.15...v0.1.0-alpha.16)
+
+### Bug Fixes
+
+* **docs:** fix mcp installation instructions for remote servers ([f40734a](https://github.com/dataleonlabs/dataleon-python/commit/f40734abc722c1e3f6f2f8853b9c17dc826ecbb2))
+
+
+### Chores
+
+* **ci:** upgrade `actions/github-script` ([393f372](https://github.com/dataleonlabs/dataleon-python/commit/393f372023f7b0c5b5f28a82e8c6ccf6aba80e0c))
+
 ## 0.1.0-alpha.15 (2026-01-20)
 
 Full Changelog: [v0.1.0-alpha.14...v0.1.0-alpha.15](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.14...v0.1.0-alpha.15)
