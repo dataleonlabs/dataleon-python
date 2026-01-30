@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.17 (2026-01-30)
+
+Full Changelog: [v0.1.0-alpha.16...v0.1.0-alpha.17](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.16...v0.1.0-alpha.17)
+
+### Features
+
+* **client:** add custom JSON encoder for extended type support ([de2db89](https://github.com/dataleonlabs/dataleon-python/commit/de2db8996a88ac84ffd24fbc660233b0c220a41a))
+
 ## 0.1.0-alpha.16 (2026-01-29)
 
 Full Changelog: [v0.1.0-alpha.15...v0.1.0-alpha.16](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.15...v0.1.0-alpha.16)
