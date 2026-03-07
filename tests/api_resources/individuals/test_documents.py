@@ -74,7 +74,7 @@ class TestDocuments:
         document = client.individuals.documents.upload(
             individual_id="individual_id",
             document_type="liasse_fiscale",
-            file=b"raw file contents",
+            file=b"Example data",
             url="https://example.com/sample.pdf",
         )
         assert_matches_type(GenericDocument, document, path=["response"])
@@ -179,7 +179,7 @@ class TestAsyncDocuments:
         document = await async_client.individuals.documents.upload(
             individual_id="individual_id",
             document_type="liasse_fiscale",
-            file=b"raw file contents",
+            file=b"Example data",
             url="https://example.com/sample.pdf",
         )
         assert_matches_type(GenericDocument, document, path=["response"])
