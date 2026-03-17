@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.1.0-alpha.18 (2026-03-17)
+
+Full Changelog: [v0.1.0-alpha.17...v0.1.0-alpha.18](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.17...v0.1.0-alpha.18)
+
+### Bug Fixes
+
+* **pydantic:** do not pass `by_alias` unless set ([44c7ae7](https://github.com/dataleonlabs/dataleon-python/commit/44c7ae773637233bff123bed4d5e145dc568ddf2))
+
+
+### Chores
+
+* **ci:** skip uploading artifacts on stainless-internal branches ([8815765](https://github.com/dataleonlabs/dataleon-python/commit/88157654ca5b24ff382e8f248219d44a05bd3249))
+* format all `api.md` files ([6796957](https://github.com/dataleonlabs/dataleon-python/commit/6796957f882215c3f628b4749d94e0677a772364))
+* **internal:** add request options to SSE classes ([b85a433](https://github.com/dataleonlabs/dataleon-python/commit/b85a433028b6213358dd0848ab2cf6b798897f45))
+* **internal:** bump dependencies ([28bda29](https://github.com/dataleonlabs/dataleon-python/commit/28bda2909361eb349e581aff379842cf585cd1d0))
+* **internal:** fix lint error on Python 3.14 ([4a478b0](https://github.com/dataleonlabs/dataleon-python/commit/4a478b0739c4381ce97699876845455315c01c84))
+* **internal:** make `test_proxy_environment_variables` more resilient ([c2df28c](https://github.com/dataleonlabs/dataleon-python/commit/c2df28c5a5fc60c6a0334d4876dff48022e6c88a))
+* **internal:** make `test_proxy_environment_variables` more resilient to env ([5ad85a4](https://github.com/dataleonlabs/dataleon-python/commit/5ad85a4a0e5149cf3caa212d65281521360d593d))
+* **internal:** remove mock server code ([f0bd5e3](https://github.com/dataleonlabs/dataleon-python/commit/f0bd5e3d9f9c4e852da015a50ca270c5f933e968))
+* update mock server docs ([3a7a494](https://github.com/dataleonlabs/dataleon-python/commit/3a7a4948e3f3c7544ead8ffb27f297852b114bdf))
+* update placeholder string ([7bc136e](https://github.com/dataleonlabs/dataleon-python/commit/7bc136e46feb4a7c1b533be5f46f40918f8f3916))
+
 ## 0.1.0-alpha.17 (2026-01-30)
 
 Full Changelog: [v0.1.0-alpha.16...v0.1.0-alpha.17](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.16...v0.1.0-alpha.17)
