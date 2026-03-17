@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.19 (2026-03-17)
+
+Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
+
+### Bug Fixes
+
+* **deps:** bump minimum typing-extensions version ([66b48d2](https://github.com/dataleonlabs/dataleon-python/commit/66b48d2d1ec61ef3de1423f808525cb304f33b80))
+
 ## 0.1.0-alpha.18 (2026-03-17)
 
 Full Changelog: [v0.1.0-alpha.17...v0.1.0-alpha.18](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.17...v0.1.0-alpha.18)
