@@ -15,7 +15,7 @@ from ...types import (
     individual_retrieve_params,
 )
 from ..._types import Body, Omit, Query, Headers, NoneType, NotGiven, omit, not_given
-from ..._utils import maybe_transform, async_maybe_transform
+from ..._utils import path_template, maybe_transform, async_maybe_transform
 from ..._compat import cached_property
 from .documents import (
     DocumentsResource,
@@ -147,7 +147,7 @@ class IndividualsResource(SyncAPIResource):
         if not individual_id:
             raise ValueError(f"Expected a non-empty value for `individual_id` but received {individual_id!r}")
         return self._get(
-            f"/individuals/{individual_id}",
+            path_template("/individuals/{individual_id}", individual_id=individual_id),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -203,7 +203,7 @@ class IndividualsResource(SyncAPIResource):
         if not individual_id:
             raise ValueError(f"Expected a non-empty value for `individual_id` but received {individual_id!r}")
         return self._put(
-            f"/individuals/{individual_id}",
+            path_template("/individuals/{individual_id}", individual_id=individual_id),
             body=maybe_transform(
                 {
                     "workspace_id": workspace_id,
@@ -317,7 +317,7 @@ class IndividualsResource(SyncAPIResource):
             raise ValueError(f"Expected a non-empty value for `individual_id` but received {individual_id!r}")
         extra_headers = {"Accept": "*/*", **(extra_headers or {})}
         return self._delete(
-            f"/individuals/{individual_id}",
+            path_template("/individuals/{individual_id}", individual_id=individual_id),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
@@ -433,7 +433,7 @@ class AsyncIndividualsResource(AsyncAPIResource):
         if not individual_id:
             raise ValueError(f"Expected a non-empty value for `individual_id` but received {individual_id!r}")
         return await self._get(
-            f"/individuals/{individual_id}",
+            path_template("/individuals/{individual_id}", individual_id=individual_id),
             options=make_request_options(
                 extra_headers=extra_headers,
                 extra_query=extra_query,
@@ -489,7 +489,7 @@ class AsyncIndividualsResource(AsyncAPIResource):
         if not individual_id:
             raise ValueError(f"Expected a non-empty value for `individual_id` but received {individual_id!r}")
         return await self._put(
-            f"/individuals/{individual_id}",
+            path_template("/individuals/{individual_id}", individual_id=individual_id),
             body=await async_maybe_transform(
                 {
                     "workspace_id": workspace_id,
@@ -603,7 +603,7 @@ class AsyncIndividualsResource(AsyncAPIResource):
             raise ValueError(f"Expected a non-empty value for `individual_id` but received {individual_id!r}")
         extra_headers = {"Accept": "*/*", **(extra_headers or {})}
         return await self._delete(
-            f"/individuals/{individual_id}",
+            path_template("/individuals/{individual_id}", individual_id=individual_id),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),

@@ -8,7 +8,7 @@ from typing_extensions import Literal
 import httpx
 
 from ..._types import Body, Omit, Query, Headers, NotGiven, FileTypes, omit, not_given
-from ..._utils import extract_files, maybe_transform, deepcopy_minimal, async_maybe_transform
+from ..._utils import extract_files, path_template, maybe_transform, deepcopy_minimal, async_maybe_transform
 from ..._compat import cached_property
 from ..._resource import SyncAPIResource, AsyncAPIResource
 from ..._response import (
@@ -71,7 +71,7 @@ class DocumentsResource(SyncAPIResource):
         if not individual_id:
             raise ValueError(f"Expected a non-empty value for `individual_id` but received {individual_id!r}")
         return self._get(
-            f"/individuals/{individual_id}/documents",
+            path_template("/individuals/{individual_id}/documents", individual_id=individual_id),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
@@ -160,7 +160,7 @@ class DocumentsResource(SyncAPIResource):
         # multipart/form-data; boundary=---abc--
         extra_headers = {"Content-Type": "multipart/form-data", **(extra_headers or {})}
         return self._post(
-            f"/individuals/{individual_id}/documents",
+            path_template("/individuals/{individual_id}/documents", individual_id=individual_id),
             body=maybe_transform(body, document_upload_params.DocumentUploadParams),
             files=files,
             options=make_request_options(
@@ -216,7 +216,7 @@ class AsyncDocumentsResource(AsyncAPIResource):
         if not individual_id:
             raise ValueError(f"Expected a non-empty value for `individual_id` but received {individual_id!r}")
         return await self._get(
-            f"/individuals/{individual_id}/documents",
+            path_template("/individuals/{individual_id}/documents", individual_id=individual_id),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
@@ -305,7 +305,7 @@ class AsyncDocumentsResource(AsyncAPIResource):
         # multipart/form-data; boundary=---abc--
         extra_headers = {"Content-Type": "multipart/form-data", **(extra_headers or {})}
         return await self._post(
-            f"/individuals/{individual_id}/documents",
+            path_template("/individuals/{individual_id}/documents", individual_id=individual_id),
             body=await async_maybe_transform(body, document_upload_params.DocumentUploadParams),
             files=files,
             options=make_request_options(
