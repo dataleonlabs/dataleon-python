@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.20 (2026-03-20)
+
+Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
+
+### Bug Fixes
+
+* sanitize endpoint path params ([0874d87](https://github.com/dataleonlabs/dataleon-python/commit/0874d871a0ec5517dc1c76c11bb8245d48b6a32a))
+
+
+### Chores
+
+* **internal:** tweak CI branches ([34643ba](https://github.com/dataleonlabs/dataleon-python/commit/34643bac2e438d806b55db8b537fc98974e598f7))
+
 ## 0.1.0-alpha.19 (2026-03-17)
 
 Full Changelog: [v0.1.0-alpha.18...v0.1.0-alpha.19](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.18...v0.1.0-alpha.19)
