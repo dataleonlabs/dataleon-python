@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.21 (2026-03-27)
+
+Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
+
+### Features
+
+* **internal:** implement indices array format for query and form serialization ([c49c577](https://github.com/dataleonlabs/dataleon-python/commit/c49c5772b0bdeb780a9cdbe167049b38c9d6aff3))
+
+
+### Chores
+
+* **ci:** skip lint on metadata-only changes ([6271855](https://github.com/dataleonlabs/dataleon-python/commit/62718558ba879916202e0ef4869f043d01bf154f))
+* **internal:** update gitignore ([f181a75](https://github.com/dataleonlabs/dataleon-python/commit/f181a7505a52446f02b80585b4ef4fc9268cc4e0))
+
 ## 0.1.0-alpha.20 (2026-03-20)
 
 Full Changelog: [v0.1.0-alpha.19...v0.1.0-alpha.20](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.19...v0.1.0-alpha.20)
