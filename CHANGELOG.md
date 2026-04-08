@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.22 (2026-04-08)
+
+Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
+
+### Bug Fixes
+
+* **client:** preserve hardcoded query params when merging with user params ([5d1bc70](https://github.com/dataleonlabs/dataleon-python/commit/5d1bc707a7c120c51e7447b9f087e30a6d506a81))
+
 ## 0.1.0-alpha.21 (2026-03-27)
 
 Full Changelog: [v0.1.0-alpha.20...v0.1.0-alpha.21](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.20...v0.1.0-alpha.21)
