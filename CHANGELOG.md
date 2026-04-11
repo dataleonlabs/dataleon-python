@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.23 (2026-04-11)
+
+Full Changelog: [v0.1.0-alpha.22...v0.1.0-alpha.23](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.22...v0.1.0-alpha.23)
+
+### Bug Fixes
+
+* ensure file data are only sent as 1 parameter ([8714a13](https://github.com/dataleonlabs/dataleon-python/commit/8714a1368b0d2cca3cba340d3179f8b978375b33))
+
 ## 0.1.0-alpha.22 (2026-04-08)
 
 Full Changelog: [v0.1.0-alpha.21...v0.1.0-alpha.22](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.21...v0.1.0-alpha.22)
