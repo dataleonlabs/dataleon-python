@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.1.0-alpha.24 (2026-04-28)
+
+Full Changelog: [v0.1.0-alpha.23...v0.1.0-alpha.24](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.23...v0.1.0-alpha.24)
+
+### Features
+
+* support setting headers via env ([0c50795](https://github.com/dataleonlabs/dataleon-python/commit/0c507957b26077d6b25475486a4c7d9f3f8c329d))
+
+
+### Bug Fixes
+
+* use correct field name format for multipart file arrays ([63ea58a](https://github.com/dataleonlabs/dataleon-python/commit/63ea58a15659f51b464a0e8ce882eb768edfcf60))
+
+
+### Performance Improvements
+
+* **client:** optimize file structure copying in multipart requests ([67261d9](https://github.com/dataleonlabs/dataleon-python/commit/67261d9d1710e73e609559b855f669cf41a519f4))
+
+
+### Chores
+
+* **internal:** more robust bootstrap script ([93aa666](https://github.com/dataleonlabs/dataleon-python/commit/93aa6660279327dadc2008aae32d1c276c9fcdb9))
+
 ## 0.1.0-alpha.23 (2026-04-11)
 
 Full Changelog: [v0.1.0-alpha.22...v0.1.0-alpha.23](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.22...v0.1.0-alpha.23)
