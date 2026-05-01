@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.25 (2026-05-01)
+
+Full Changelog: [v0.1.0-alpha.24...v0.1.0-alpha.25](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.24...v0.1.0-alpha.25)
+
+### Chores
+
+* **internal:** reformat pyproject.toml ([c39e1a0](https://github.com/dataleonlabs/dataleon-python/commit/c39e1a0c002b230f36082748b14baf4338c98b1c))
+
 ## 0.1.0-alpha.24 (2026-04-28)
 
 Full Changelog: [v0.1.0-alpha.23...v0.1.0-alpha.24](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.23...v0.1.0-alpha.24)
