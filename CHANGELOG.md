@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.26 (2026-05-12)
+
+Full Changelog: [v0.1.0-alpha.25...v0.1.0-alpha.26](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.25...v0.1.0-alpha.26)
+
+### Features
+
+* **internal/types:** support eagerly validating pydantic iterators ([001e49b](https://github.com/dataleonlabs/dataleon-python/commit/001e49b9ec8c494af3432981fcfd8f6b01e1a3d2))
+
 ## 0.1.0-alpha.25 (2026-05-09)
 
 Full Changelog: [v0.1.0-alpha.24...v0.1.0-alpha.25](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.24...v0.1.0-alpha.25)
