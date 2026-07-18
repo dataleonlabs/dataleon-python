@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.27 (2026-07-18)
+
+Full Changelog: [v0.1.0-alpha.26...v0.1.0-alpha.27](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.26...v0.1.0-alpha.27)
+
+### Features
+
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([b6e4e7e](https://github.com/dataleonlabs/dataleon-python/commit/b6e4e7e25cd77ae4d2cc23fc381e70694460781b))
+
 ## 0.1.0-alpha.26 (2026-05-12)
 
 Full Changelog: [v0.1.0-alpha.25...v0.1.0-alpha.26](https://github.com/dataleonlabs/dataleon-python/compare/v0.1.0-alpha.25...v0.1.0-alpha.26)
